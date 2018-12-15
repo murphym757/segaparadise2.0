@@ -8,18 +8,18 @@ $skyBlue: #75e2df;
 $softBlack: #272727;
 
 body {
-    display: table;
+    display: block;
     width: 100%;
     height: auto;
     text-align: center;
     background: no-repeat bottom center scroll;
-    background-color: $skyBlue;
+    background-color: black;
     background-blend-mode: multiply;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover; 
-    color: $softBlack;
+    color: white;
 }
 
 img {
@@ -32,6 +32,29 @@ h1 {
     font-family: 'LemonMilk';
 }
 
+
+.tableHeader,
+.developerRow,
+.genreRow,
+.releaseRow,
+.ratingRow {
+    text-align: center;
+    justify-content: center;
+}
+.image-container{
+    height: auto;
+    width: 100%;
+    background-size: cover;
+   }
+
+//Games Page
+.card {
+    border: 1.5px solid $oceanGreen;
+    position: relative;
+}
+.gamePageThumbnail {
+
+}
 
 // Media Queries
 /* ---------------------------------------------------- */

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 const proxyUrl = "https://cors-anywhere.herokuapp.com/";
@@ -330,7 +330,7 @@ export default class MainSource extends Component {
                 <h1>{this.state.tinyToons.gameName}</h1>
                 <div class="row pt-2 pb-2"> {/* Row 1 */}
                     <div class="container">
-                        <img src={this.state.aladdin.gameImage} class="rounded homepageThumbnail col-3" />
+                    <Link class="homeLink" to="/games/1"><img src={this.state.aladdin.gameImage} class="rounded homepageThumbnail col-3" /></Link>
                         <img src={this.state.lionKing.gameImage} class="rounded homepageThumbnail col-3" /> 
                         <img src={this.state.sonic1.gameImage} class="rounded homepageThumbnail col-3" />
                         <img src={this.state.streetsOfRage2.gameImage} class="rounded homepageThumbnail col-3" />
@@ -338,8 +338,8 @@ export default class MainSource extends Component {
                 </div>
                 <div class="row pt-2 pb-2"> {/* Row 2 */}
                     <div class="container">
-                        <img src={this.state.sonic2.gameImage} class="homepageThumbnail col-3" />
-                        <img src={this.state.mortalKombat.gameImage} class="rounded homepageThumbnail col-3" /> 
+                        <img src={this.state.sonic2.gameImage} class="homepageThumbnail image-container col-3" />
+                        <img src={this.state.mortalKombat.gameImage} class="rounded image-container homepageThumbnail col-3" /> 
                         <img src={this.state.pocahontas.gameImage} class="rounded homepageThumbnail col-3" />
                         <img src={this.state.mjMoonwalker.gameImage} class="rounded homepageThumbnail col-3" />
                     </div>
@@ -360,8 +360,12 @@ export default class MainSource extends Component {
                         <img src={this.state.tmntHyperStoneHeist.gameImage} class="rounded homepageThumbnail col-3" />
                     </div>
                 </div>
-                <div class="row"></div>
-                <img src="./src/app/assets/images/miami-skyline-night.jpg" alt="Smiley face" height="42" width="42" /> 
+                <div class="row">
+                    <div class="container-fluid">
+                        <div class="grid"></div>
+                    </div>
+                </div>
+                <img src="./src/app/assets/images/miami-skyline-night.jpg" alt="Smiley face" height="42" width="42" />
             </div>
           );
       }
