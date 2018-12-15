@@ -126,12 +126,13 @@ export default class aladdinGameLink extends Component {
                 <div class="row">
                     <div class="mx-auto"><h6>Data Provided Courtesy of GiantBomb (add link)</h6></div>
                 </div>
-                </div>
                 <div class="row">
                     <div class="container-fluid">
                         <div class="grid"></div>
                     </div>
                 </div>
+                </div>
+                
             </div>
         )}
 }
