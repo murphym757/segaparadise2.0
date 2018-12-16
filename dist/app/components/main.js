@@ -385,9 +385,9 @@ function (_Component) {
   _createClass(MainSource, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", {
-        class: "container-fluid"
-      }, _react.default.createElement("h1", null, this.state.tinyToons.gameName), _react.default.createElement("div", {
+      return _react.default.createElement("div", null, _react.default.createElement("div", {
+        class: "container-fluid d-none d-xl-block"
+      }, " ", _react.default.createElement("h1", null, "Logo"), _react.default.createElement("div", {
         class: "row pt-2 pb-2"
       }, " ", _react.default.createElement("div", {
         class: "container"
@@ -460,12 +460,137 @@ function (_Component) {
         class: "container-fluid"
       }, _react.default.createElement("div", {
         class: "grid"
-      }))), _react.default.createElement("img", {
-        src: "./src/app/assets/images/miami-skyline-night.jpg",
-        alt: "Smiley face",
-        height: "42",
-        width: "42"
-      }));
+      }), _react.default.createElement("h3", {
+        class: "mx-auto"
+      }, "Giant Bomb Logo and link")))), _react.default.createElement("div", {
+        class: "container-fluid mobileGrid d-xl-none"
+      }, " ", _react.default.createElement("div", {
+        class: "container-fluid"
+      }, _react.default.createElement("div", {
+        class: "card cardFrontPage"
+      }, _react.default.createElement("div", {
+        class: "row"
+      }, " ", _react.default.createElement("h1", {
+        class: "mx-auto"
+      }, "Logo")), _react.default.createElement("div", {
+        class: "row"
+      }, " ", _react.default.createElement("div", {
+        class: "row pt-2 pb-2 mx-auto"
+      }, " ", _react.default.createElement("div", {
+        class: "container-fluid"
+      }, _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/1"
+      }, _react.default.createElement("img", {
+        src: this.state.aladdin.gameImage,
+        class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink pl-2 pr-1",
+        to: "/games/1"
+      }, _react.default.createElement("img", {
+        src: this.state.lionKing.gameImage,
+        class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink pl-1 pr-2",
+        to: "/games/1"
+      }, _react.default.createElement("img", {
+        src: this.state.sonic1.gameImage,
+        class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/1"
+      }, _react.default.createElement("img", {
+        src: this.state.streetsOfRage2.gameImage,
+        class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
+      })))), _react.default.createElement("div", {
+        class: "row pt-2 pb-2 mx-auto"
+      }, " ", _react.default.createElement("div", {
+        class: "container-fluid"
+      }, _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/1"
+      }, _react.default.createElement("img", {
+        src: this.state.sonic2.gameImage,
+        class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink pl-2 pr-1",
+        to: "/games/1"
+      }, _react.default.createElement("img", {
+        src: this.state.mortalKombat.gameImage,
+        class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink pl-1 pr-2",
+        to: "/games/1"
+      }, _react.default.createElement("img", {
+        src: this.state.pocahontas.gameImage,
+        class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/1"
+      }, _react.default.createElement("img", {
+        src: this.state.mjMoonwalker.gameImage,
+        class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
+      })))), _react.default.createElement("div", {
+        class: "row pt-2 pb-2 mx-auto"
+      }, " ", _react.default.createElement("div", {
+        class: "container-fluid"
+      }, _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/1"
+      }, _react.default.createElement("img", {
+        src: this.state.sonicNKnuckles.gameImage,
+        class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink pl-2 pr-1",
+        to: "/games/1"
+      }, _react.default.createElement("img", {
+        src: this.state.toejamNEarl.gameImage,
+        class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink pr-2 pl-1",
+        to: "/games/1"
+      }, _react.default.createElement("img", {
+        src: this.state.kidChameleon.gameImage,
+        class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/1"
+      }, _react.default.createElement("img", {
+        src: this.state.ecco1.gameImage,
+        class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
+      })))), _react.default.createElement("div", {
+        class: "row pt-2 pb-2 mx-auto"
+      }, " ", _react.default.createElement("div", {
+        class: "container-fluid"
+      }, _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/1"
+      }, _react.default.createElement("img", {
+        src: this.state.castleMickey.gameImage,
+        class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink pl-2 pr-1",
+        to: "/games/1"
+      }, _react.default.createElement("img", {
+        src: this.state.streetFighter2.gameImage,
+        class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink pr-2 pl-1",
+        to: "/games/1"
+      }, _react.default.createElement("img", {
+        src: this.state.tinyToons.gameImage,
+        class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/1"
+      }, _react.default.createElement("img", {
+        src: this.state.tmntHyperStoneHeist.gameImage,
+        class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
+      }))))), _react.default.createElement("div", {
+        class: "row"
+      }, " ", _react.default.createElement("h3", {
+        class: "mx-auto"
+      }, "Giant Bomb Logo and link"))))));
     }
   }]);
 

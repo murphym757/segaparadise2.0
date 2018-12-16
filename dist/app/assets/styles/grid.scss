@@ -15,7 +15,7 @@ $softBlack: #272727;
     background-image: linear-gradient(90deg, transparent 0%, transparent 85%, #FF7FBF 90%, transparent 95%), linear-gradient(0deg, transparent 0%, transparent 85%, #FF7FBF 90%, transparent 95%);
     background-size: 12px 12px;
     width: 200vw;
-    height: 60vh;
+    height: 25vh;
     transform: translate3D(0, 0, 0) perspective(150px) rotateX(45deg) ;
     perspective-origin: top;
     
@@ -27,13 +27,13 @@ $softBlack: #272727;
   }
   
   .grid:after {
-    content: "";
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(to top, transparent, black);
+    z-index: -1;
   }
   
   @keyframes movement {

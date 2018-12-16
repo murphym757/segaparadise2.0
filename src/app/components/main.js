@@ -326,8 +326,9 @@ export default class MainSource extends Component {
 
     render() {
         return (
-            <div class="container-fluid">
-                <h1>{this.state.tinyToons.gameName}</h1>
+            <div>
+            <div class="container-fluid d-none d-xl-block"> {/* For larger Sceens */}
+                <h1>Logo</h1>
                 <div class="row pt-2 pb-2"> {/* Row 1 */}
                     <div class="container">
                     <Link class="homeLink" to="/games/1"><img src={this.state.aladdin.gameImage} class="rounded homepageThumbnail col-3" /></Link>
@@ -363,9 +364,57 @@ export default class MainSource extends Component {
                 <div class="row">
                     <div class="container-fluid">
                         <div class="grid"></div>
+                        <h3 class="mx-auto">Giant Bomb Logo and link</h3>
                     </div>
                 </div>
-                <img src="./src/app/assets/images/miami-skyline-night.jpg" alt="Smiley face" height="42" width="42" />
+            </div>
+            <div class="container-fluid mobileGrid d-xl-none"> {/* For sceens smaller than "Large" */}
+                
+                <div class="container-fluid">
+                <div class="card cardFrontPage">
+                <div class="row"> {/* Logo Section */}
+                    <h1 class="mx-auto">Logo</h1>
+                </div>
+                <div class="row"> {/* Games Section */}
+                    <div class="row pt-2 pb-2 mx-auto"> {/* Row 1 */}
+                        <div class="container-fluid">
+                            <Link class="homeLink" to="/games/1"><img src={this.state.aladdin.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                            <Link class="homeLink pl-2 pr-1" to="/games/1"><img src={this.state.lionKing.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
+                            <Link class="homeLink pl-1 pr-2" to="/games/1"><img src={this.state.sonic1.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                            <Link class="homeLink" to="/games/1"><img src={this.state.streetsOfRage2.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                        </div>
+                    </div>
+                    <div class="row pt-2 pb-2 mx-auto"> {/* Row 2 */}
+                        <div class="container-fluid">
+                            <Link class="homeLink" to="/games/1"><img src={this.state.sonic2.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                            <Link class="homeLink pl-2 pr-1" to="/games/1"><img src={this.state.mortalKombat.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
+                            <Link class="homeLink pl-1 pr-2" to="/games/1"><img src={this.state.pocahontas.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                            <Link class="homeLink" to="/games/1"><img src={this.state.mjMoonwalker.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                        </div>
+                    </div>
+                    <div class="row pt-2 pb-2 mx-auto"> {/* Row 3 */}
+                        <div class="container-fluid">
+                            <Link class="homeLink" to="/games/1"><img src={this.state.sonicNKnuckles.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                            <Link class="homeLink pl-2 pr-1" to="/games/1"><img src={this.state.toejamNEarl.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
+                            <Link class="homeLink pr-2 pl-1" to="/games/1"><img src={this.state.kidChameleon.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                            <Link class="homeLink" to="/games/1"><img src={this.state.ecco1.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                        </div>
+                    </div>
+                    <div class="row pt-2 pb-2 mx-auto"> {/* Row 4 */}
+                    <div class="container-fluid">
+                        <Link class="homeLink" to="/games/1"><img src={this.state.castleMickey.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                        <Link class="homeLink pl-2 pr-1" to="/games/1"><img src={this.state.streetFighter2.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
+                        <Link class="homeLink pr-2 pl-1" to="/games/1"><img src={this.state.tinyToons.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                        <Link class="homeLink" to="/games/1"><img src={this.state.tmntHyperStoneHeist.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                    </div>
+                </div>
+                </div>
+                <div class="row"> {/* Source Section */}
+                    <h3 class="mx-auto">Giant Bomb Logo and link</h3>
+                </div> 
+                </div> 
+                </div>
+            </div>
             </div>
           );
       }

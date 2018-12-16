@@ -32,6 +32,31 @@ h1 {
     font-family: 'LemonMilk';
 }
 
+.cardFrontPage {
+    background-color: black;
+    border: 1px solid transparent;
+}
+
+.mobileGrid {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient($oceanGreen .1em, transparent .1em), linear-gradient(90deg, $oceanGreen .1em, transparent .1em);
+    background-size: 3em 3em;
+}
+
+.homepageThumbnail-mobile { 
+    // height: 138px; iPhone 6 Plus
+    height: 100px;
+    width: 75px;
+}
+
+
+.img-thumbnail {
+    background: transparent;
+    border: 1px solid $oceanGreen;
+}
 
 .tableHeader,
 .developerRow,
@@ -41,11 +66,6 @@ h1 {
     text-align: center;
     justify-content: center;
 }
-.image-container{
-    height: auto;
-    width: 100%;
-    background-size: cover;
-   }
 
 //Games Page
 .card {
@@ -56,71 +76,198 @@ h1 {
 
 }
 
-// Media Queries
+/*--------------------------------------------*/
+
+  // Media Queries
+/* ---------------------------------------------------- */
 /* ---------------------------------------------------- */
 
-/* Small devices (Phones, 768px) */
+/* iphone 4 */
+@media only screen 
+    and (min-device-width: 320px) 
+    and (max-device-height: 480px) 
+    and (-webkit-device-pixel-ratio: 2) 
+    and (orientation: portrait) {
 
-@media (max-width: 767px) and (orientation: portrait) {
-    
+
+}
+@media only screen 
+    and (min-device-width: 320px) 
+    and (max-device-height: 480px) 
+    and (-webkit-device-pixel-ratio: 2) 
+    and (orientation: landscape) {
+
 }
 
-@media (max-width: 767px) and (orientation: landscape) {
-   
+/* iphone 5 */
+@media only screen 
+    and (min-device-width: 320px) 
+    and (max-device-height: 568px) 
+    and (orientation: portrait) {
+        .homepageThumbnail-mobile {
+            height: 75px;
+            width: 50px;
+        }
 }
 
-@media (max-width: 766px) and (orientation: landscape) {
-   
+@media only screen 
+    and (min-device-width: 320px) 
+    and (max-device-height: 568px) 
+    and (orientation: landscape) {
+        .homepageThumbnail-mobile {
+            height: 75px;
+            width: 50px;
+        }
 }
 
-/* ---------------------------------------------------- */
+/* Galaxy S5 */
+@media only screen 
+    and (min-device-width: 360px) 
+    and (max-device-height: 640px) 
+    and (orientation: portrait) {
 
-/* IPhone X and Pixel XL 2 */
-
-@media (min-width: 812px) and (max-width: 823px) and (orientation: portrait) {
-    
 }
 
-@media (min-width: 812px) and (max-width: 823px) and (orientation: landscape) {
-   
+@media only screen 
+    and (min-device-width: 360px) 
+    and (max-device-height: 640px) 
+    and (orientation: landscape) {
+        
 }
+
+/* iphone 6, 6s, 7, 8 */
+@media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-height: 667px) 
+    and (-webkit-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+
+}
+@media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-height: 667px) 
+    and (-webkit-device-pixel-ratio: 2)
+    and (orientation: landscape) {
+
+}
+
+/* iphone 6+, 6s+, 7+, 8+ */
+@media only screen 
+    and (min-device-width: 414px)
+    and (max-device-height: 736px) 
+    and (-webkit-device-pixel-ratio: 3) 
+    and (orientation: portrait) {
+       
+    }
+
+    @media only screen 
+    and (min-device-width: 414px)
+    and (max-device-height: 736px) 
+    and (-webkit-device-pixel-ratio: 3) 
+    and (orientation: landscape) {
+
+    }
+
+/* iphone X */
+@media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-height: 812px) 
+    and (-webkit-device-pixel-ratio: 3) 
+    and (orientation: portrait) {
+
+    }
+
+@media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-height: 812px) 
+    and (-webkit-device-pixel-ratio: 3) 
+    and (orientation: landscape) {
+        .homepageThumbnail-mobile {
+            height: 100px;
+            width: 75px;
+    }
+}
+
+/* Pixel 2 */
+@media only screen 
+    and (min-device-width: 411px) 
+    and (max-device-height: 731px) 
+    and (-webkit-device-pixel-ratio: 3) 
+    and (orientation: portrait) {
+
+    }
 
 /* ---------------------------------------------------- */
 
 /* Ipad */
 
-@media (min-width: 768px) and (max-width: 811px) and (orientation: portrait) {
-    
-}
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-height: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) 
+  and (orientation: portrait) {
+    .homepageThumbnail-mobile {
+        height: 200px;
+        width: 150px;
+    }
+  }
 
-@media (min-width: 824px) and (max-width: 1024px) and (orientation: landscape) {
-    
-}
 
-/* Ipad Pro */
+/* Ipad  Pro*/
 
-@media (min-width: 813px) and (max-width: 1024px) and (orientation: portrait) {
-    
-}
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-height: 1366px) 
+  and (-webkit-min-device-pixel-ratio: 2) 
+  and (orientation: portrait) {
+    .homepageThumbnail-mobile {
+        height: 225px;
+        width: 175px;
+    }
+  }
 
-@media (min-width: 1025px) and (max-width: 1439px) and (orientation: landscape) {
-   
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-height: 1366px) 
+  and (-webkit-min-device-pixel-ratio: 2) 
+  and (orientation: landscape) {
+    .homepageThumbnail-mobile {
+        height: 150px;
+        width: 100px;
+    }
 }
 
 /* ---------------------------------------------------- */
 
 /* MDPI Screens (Computers, 1440px and up) */
 
-@media (min-width: 1280px) and (max-width: 1280px) and (orientation: landscape) {
-   
+@media (min-width: 1280px) and (max-width: 1439px) and (orientation: landscape) {
+    .homepageThumbnail-mobile {
+        height: 300px;
+        width: 275px;
+    }
+    .homepageThumbnail {
+        height: 125px;
+        width: 125px;
+    }
 }
 
-/* ---------------------------------------------------- */
-
-/* Large devices (Computers, 1440px and up) */
+/* HDPI Screens (Computers, 1440px and up) */
 
 @media (min-width: 1440px) and (orientation: landscape) {
-    
+    .homepageThumbnail {
+        height: 150px;
+        width: 150px;
+    }
 }
 
 /* ---------------------------------------------------- */
+
+/* 4K Resolution (Computers, 3840px and up) */
+
+@media (min-width: 3840px) and (orientation: landscape) {
+    .homepageThumbnail {
+        height: 325px;
+        width: 275px;
+    }
+}
