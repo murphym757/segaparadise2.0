@@ -61,7 +61,40 @@ function (_Component) {
 
       var gameDescription = "The story is based on an Arab folktale by the same name from One Thousand and One Nights (Though many aspects have been changed by Disney). Players control a street urchin by the name of Aladdin who meets a young princess named Jasmine. The Grand Vizier Jafar wants Jasmine for his bride and needs Aladdin to get the magic lamp from the Cave of Wonders for him. Things don't work out the way they were supposed to and Aladdin gets stuck with the lamp, as well as three wishes. Then, more things go wrong and eventually a battle between Jafar and Aladdin occurs. Aladdin comes out victorious, frees the genie, and gets engaged to the princess.";
 
+      var esrbRatingIconE = _react.default.createElement("img", {
+        class: "esrbRatingIcon",
+        src: "../src/app/assets/images/esrb_e.png",
+        alt: "ratingIcon",
+        height: "42",
+        width: "42"
+      });
+
+      var esrbRatingIconT = _react.default.createElement("img", {
+        class: "esrbRatingIcon",
+        src: "../src/app/assets/images/esrb_t.png",
+        alt: "ratingIcon",
+        height: "42",
+        width: "42"
+      });
+
+      var esrbRatingIconM = _react.default.createElement("img", {
+        class: "esrbRatingIcon",
+        src: "../src/app/assets/images/esrb_m.png",
+        alt: "ratingIcon",
+        height: "42",
+        width: "42"
+      });
+
       _axios.default.get(proxyUrl + segaGameUrl + gameGUID + GiantBombAPI + dataFormat).then(function (res) {
+        var gameESRBRating = res.data.results.original_game_rating[0].id;
+        if (gameESRBRating === 6) _this.setState({
+          gameRating: esrbRatingIconE
+        });else if (gameESRBRating === 1) _this.setState({
+          gameRating: esrbRatingIconT
+        });else if (gameESRBRating === 16) _this.setState({
+          gameRating: esrbRatingIconM
+        });
+
         _this.setState({
           game: {
             gameName: res.data.results.name,
@@ -83,7 +116,6 @@ function (_Component) {
             }, res.data.results.original_release_date),
             gameReleaseSectionHeader: "Release Date:",
             //Rating Data (Adjusted to ESRB)
-            gameRating: res.data.results.original_game_rating[0].id,
             gameRatingSectionHeader: "Rated:"
           }
         });
@@ -95,7 +127,8 @@ function (_Component) {
     };
 
     _this.state = {
-      game: {}
+      game: {},
+      gameRating: null
     };
     return _this;
   }
@@ -128,37 +161,45 @@ function (_Component) {
         class: "table"
       }, _react.default.createElement("tbody", null, _react.default.createElement("tr", null, " ", _react.default.createElement("td", {
         class: "tableHeader"
-      }, _react.default.createElement("strong", null, this.state.game.gameDeveloperSectionHeader)), _react.default.createElement("td", {
+      }, _react.default.createElement("strong", {
+        class: "sectionHeader"
+      }, this.state.game.gameDeveloperSectionHeader)), _react.default.createElement("td", {
         class: "gameDataRows"
       }, _react.default.createElement("div", {
         class: "row developerRow"
-      }, this.state.game.gameDeveloper1), _react.default.createElement("div", {
+      }, _react.default.createElement("h6", null, this.state.game.gameDeveloper1)), _react.default.createElement("div", {
         class: "row developerRow"
-      }, this.state.game.gameDeveloper2), _react.default.createElement("div", {
+      }, _react.default.createElement("h6", null, this.state.game.gameDeveloper2)), _react.default.createElement("div", {
         class: "row developerRow"
-      }, this.state.game.gameDeveloper3))), _react.default.createElement("tr", null, " ", _react.default.createElement("td", {
+      }, _react.default.createElement("h6", null, this.state.game.gameDeveloper3)))), _react.default.createElement("tr", null, " ", _react.default.createElement("td", {
         class: "tableHeader"
-      }, _react.default.createElement("strong", null, this.state.game.gameGenreSectionHeader)), _react.default.createElement("td", {
+      }, _react.default.createElement("strong", {
+        class: "sectionHeader"
+      }, this.state.game.gameGenreSectionHeader)), _react.default.createElement("td", {
         class: "gameDataRows"
       }, _react.default.createElement("div", {
         class: "row genreRow"
-      }, this.state.game.gameGenre1), _react.default.createElement("div", {
+      }, _react.default.createElement("h6", null, this.state.game.gameGenre1)), _react.default.createElement("div", {
         class: "row genreRow"
-      }, this.state.game.gameGenre2), _react.default.createElement("div", {
+      }, _react.default.createElement("h6", null, this.state.game.gameGenre2)), _react.default.createElement("div", {
         class: "row genreRow"
-      }, this.state.game.gameGenre3))), _react.default.createElement("tr", null, " ", _react.default.createElement("td", {
+      }, _react.default.createElement("h6", null, this.state.game.gameGenre3)))), _react.default.createElement("tr", null, " ", _react.default.createElement("td", {
         class: "tableHeader"
-      }, _react.default.createElement("strong", null, this.state.game.gameReleaseSectionHeader)), _react.default.createElement("td", {
+      }, _react.default.createElement("strong", {
+        class: "sectionHeader"
+      }, this.state.game.gameReleaseSectionHeader)), _react.default.createElement("td", {
         class: "gameDataRows"
       }, _react.default.createElement("div", {
         class: "row releaseRow"
-      }, this.state.game.releaseDate))), _react.default.createElement("tr", null, " ", _react.default.createElement("td", {
+      }, _react.default.createElement("h6", null, this.state.game.releaseDate)))), _react.default.createElement("tr", null, " ", _react.default.createElement("td", {
         class: "tableHeader"
-      }, _react.default.createElement("strong", null, this.state.game.gameRatingSectionHeader)), _react.default.createElement("td", {
+      }, _react.default.createElement("strong", {
+        class: "sectionHeader"
+      }, this.state.game.gameRatingSectionHeader)), _react.default.createElement("td", {
         class: "gameDataRows"
       }, _react.default.createElement("div", {
         class: "row ratingRow"
-      }, this.state.game.gameRating))))))), " ", _react.default.createElement("div", {
+      }, this.state.gameRating))))))), " ", _react.default.createElement("div", {
         class: "col-sm-4 pb-2"
       }, " ", _react.default.createElement("div", {
         class: "container"

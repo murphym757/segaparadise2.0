@@ -14,6 +14,7 @@ export default class aladdinGameLink extends Component {
         super(props);
         this.state = {
             game: {},
+            gameRating: null
         };
     }
     componentDidMount = (e) => {
@@ -22,8 +23,18 @@ export default class aladdinGameLink extends Component {
     gameData = (e) => {
         const gameGUID = "3030-19944"; //Aladdin
         const gameDescription = "The story is based on an Arab folktale by the same name from One Thousand and One Nights (Though many aspects have been changed by Disney). Players control a street urchin by the name of Aladdin who meets a young princess named Jasmine. The Grand Vizier Jafar wants Jasmine for his bride and needs Aladdin to get the magic lamp from the Cave of Wonders for him. Things don't work out the way they were supposed to and Aladdin gets stuck with the lamp, as well as three wishes. Then, more things go wrong and eventually a battle between Jafar and Aladdin occurs. Aladdin comes out victorious, frees the genie, and gets engaged to the princess.";
+        const esrbRatingIconE = <img class="esrbRatingIcon" src="../src/app/assets/images/esrb_e.png" alt="ratingIcon" height="42" width="42" />;
+        const esrbRatingIconT = <img class="esrbRatingIcon" src="../src/app/assets/images/esrb_t.png" alt="ratingIcon" height="42" width="42" />;
+        const esrbRatingIconM = <img class="esrbRatingIcon" src="../src/app/assets/images/esrb_m.png" alt="ratingIcon" height="42" width="42" />;
         axios.get(proxyUrl + segaGameUrl + gameGUID + GiantBombAPI + dataFormat)
         .then(res => {
+            let gameESRBRating = res.data.results.original_game_rating[0].id;
+            if(gameESRBRating === 6)
+                this.setState({gameRating: esrbRatingIconE})
+            else if(gameESRBRating === 1)
+                this.setState({gameRating: esrbRatingIconT})
+            else if(gameESRBRating === 16)
+                this.setState({gameRating: esrbRatingIconM})
             this.setState({
                 game: {
                     gameName: res.data.results.name,
@@ -43,7 +54,6 @@ export default class aladdinGameLink extends Component {
                     releaseDate: <Moment format="MMMM Do, YYYY">{res.data.results.original_release_date}</Moment>,
                     gameReleaseSectionHeader: "Release Date:",
                     //Rating Data (Adjusted to ESRB)
-                    gameRating: res.data.results.original_game_rating[0].id,
                     gameRatingSectionHeader: "Rated:",
                     
                 }
@@ -73,38 +83,38 @@ export default class aladdinGameLink extends Component {
                                         <tbody>
                                             <tr> {/* Developer Row */}
                                                 <td class="tableHeader">
-                                                    <strong>{this.state.game.gameDeveloperSectionHeader}</strong>
+                                                    <strong class="sectionHeader">{this.state.game.gameDeveloperSectionHeader}</strong>
                                                 </td>
                                                 <td class="gameDataRows">
-                                                    <div class="row developerRow">{this.state.game.gameDeveloper1}</div>
-                                                    <div class="row developerRow">{this.state.game.gameDeveloper2}</div>
-                                                    <div class="row developerRow">{this.state.game.gameDeveloper3}</div>
+                                                    <div class="row developerRow"><h6>{this.state.game.gameDeveloper1}</h6></div>
+                                                    <div class="row developerRow"><h6>{this.state.game.gameDeveloper2}</h6></div>
+                                                    <div class="row developerRow"><h6>{this.state.game.gameDeveloper3}</h6></div>
                                                 </td>
                                             </tr> 
                                             <tr> {/* Genre Row */}
                                                 <td class="tableHeader">
-                                                    <strong>{this.state.game.gameGenreSectionHeader}</strong>
+                                                    <strong class="sectionHeader">{this.state.game.gameGenreSectionHeader}</strong>
                                                 </td>
                                                 <td class="gameDataRows">
-                                                    <div class="row genreRow">{this.state.game.gameGenre1}</div>
-                                                    <div class="row genreRow">{this.state.game.gameGenre2}</div>
-                                                    <div class="row genreRow">{this.state.game.gameGenre3}</div>
+                                                    <div class="row genreRow"><h6>{this.state.game.gameGenre1}</h6></div>
+                                                    <div class="row genreRow"><h6>{this.state.game.gameGenre2}</h6></div>
+                                                    <div class="row genreRow"><h6>{this.state.game.gameGenre3}</h6></div>
                                                 </td>
                                             </tr> 
                                             <tr> {/* Release Date Row */}
                                                 <td class="tableHeader">
-                                                    <strong>{this.state.game.gameReleaseSectionHeader}</strong>
+                                                    <strong class="sectionHeader">{this.state.game.gameReleaseSectionHeader}</strong>
                                                 </td>
                                                 <td class="gameDataRows">
-                                                    <div class="row releaseRow">{this.state.game.releaseDate}</div>
+                                                    <div class="row releaseRow"><h6>{this.state.game.releaseDate}</h6></div>
                                                 </td>
                                             </tr> 
                                             <tr> {/* Rating Row */}
                                                 <td class="tableHeader">
-                                                    <strong>{this.state.game.gameRatingSectionHeader}</strong>
+                                                    <strong class="sectionHeader">{this.state.game.gameRatingSectionHeader}</strong>
                                                 </td>
                                                 <td class="gameDataRows">
-                                                    <div class="row ratingRow">{this.state.game.gameRating}</div>
+                                                    <div class="row ratingRow">{this.state.gameRating}</div>
                                                 </td>
                                             </tr> 
                                         </tbody>
