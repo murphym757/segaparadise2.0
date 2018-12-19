@@ -1,7 +1,7 @@
 // Miami 1985 Color Palette
 
 $violet: #d080d7;
-$hotPink: #e87fcd;
+$hotPink: #f25ea4;
 $powderPink: #f9d3ff;
 $oceanGreen: #70bac9;
 $skyBlue: #75e2df;
@@ -25,13 +25,6 @@ body {
 img {
     max-width: 100%;
     height: auto;
-}
-
-h1 {
-    color: black;
-    -webkit-text-stroke: 1px $violet;
-    text-shadow: 0 0 4px $violet;
-    font-family: 'LemonMilk';
 }
 
 .cardFrontPage {
@@ -81,12 +74,14 @@ h1 {
     font-size: 1em;
 }
 .sectionHeader {
-    color: $violet;
-}
-
-.h6 {
+    color: $hotPink;
     font-size: 0.7em;
 }
+
+.rowFont {
+    font-size: 0.5em;
+}
+
 .esrbRatingIcon {
     height: 22px;
     width: 18px;

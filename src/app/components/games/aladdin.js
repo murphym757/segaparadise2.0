@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+import styled from 'styled-components';
 import axios from 'axios';
 import Moment from 'react-moment';
 
@@ -8,13 +9,15 @@ const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 const segaGameUrl = "https://www.giantbomb.com/api/game/";
 const GiantBombAPI = "/?api_key=7198a87d91743e61f8b82c5a59d616542c2e4a1b";
 const dataFormat = "&format=json";
+"https://www.giantbomb.com/api/game/3030-19944/?api_key=7198a87d91743e61f8b82c5a59d616542c2e4a1b&format=json"
 
 export default class aladdinGameLink extends Component {
     constructor(props) {
         super(props);
         this.state = {
             game: {},
-            gameRating: null
+            gameRating: null,
+            dataAPILink: null
         };
     }
     componentDidMount = (e) => {
@@ -23,9 +26,25 @@ export default class aladdinGameLink extends Component {
     gameData = (e) => {
         const gameGUID = "3030-19944"; //Aladdin
         const gameDescription = "The story is based on an Arab folktale by the same name from One Thousand and One Nights (Though many aspects have been changed by Disney). Players control a street urchin by the name of Aladdin who meets a young princess named Jasmine. The Grand Vizier Jafar wants Jasmine for his bride and needs Aladdin to get the magic lamp from the Cave of Wonders for him. Things don't work out the way they were supposed to and Aladdin gets stuck with the lamp, as well as three wishes. Then, more things go wrong and eventually a battle between Jafar and Aladdin occurs. Aladdin comes out victorious, frees the genie, and gets engaged to the princess.";
-        const esrbRatingIconE = <img class="esrbRatingIcon" src="../src/app/assets/images/esrb_e.png" alt="ratingIcon" height="42" width="42" />;
-        const esrbRatingIconT = <img class="esrbRatingIcon" src="../src/app/assets/images/esrb_t.png" alt="ratingIcon" height="42" width="42" />;
-        const esrbRatingIconM = <img class="esrbRatingIcon" src="../src/app/assets/images/esrb_m.png" alt="ratingIcon" height="42" width="42" />;
+        const esrbRatingIconE = <img class="esrbRatingIcon" src="../src/app/assets/images/ratingIcons/esrb_e.png" alt="ratingIcon" height="42" width="42" />;
+        const esrbRatingIconT = <img class="esrbRatingIcon" src="../src/app/assets/images/ratingIcons/esrb_t.png" alt="ratingIcon" height="42" width="42" />;
+        const esrbRatingIconM = <img class="esrbRatingIcon" src="../src/app/assets/images/ratingIcons/esrb_m.png" alt="ratingIcon" height="42" width="42" />;
+        const spGiantBombIcon = <img class="spGBIcon" src="../src/app/assets/images/segaParadise2GBLogo.svg" alt="siteLogoIcon" height="42" width="42" />;
+        //Images
+        const image1 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/3715/584486-aladmg022.jpg" alt="imageForGrid" height="100" Width="100" />;
+        const image2 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/3715/584483-aladmg024.jpg" alt="imageForGrid" height="100" Width="100" />;
+        const image3 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/3715/584477-aladmg030.jpg" alt="imageForGrid" height="100" Width="100" />;
+        const image4 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/3715/584479-aladmg028.jpg" alt="imageForGrid" height="100" Width="100" />;
+        const image5 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/3715/584476-aladmg031.jpg" alt="imageForGrid" height="100" Width="100" />;
+        const image6 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/3715/584475-aladmg032.jpg" alt="imageForGrid" height="100" Width="100" />;
+        const image7 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/3715/584469-aladmg021.jpg" alt="imageForGrid" height="100" Width="100" />;
+        const modalImage1 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/3715/584486-aladmg022.jpg" alt="imageForModal"/>;
+        const modalImage2 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/3715/584483-aladmg024.jpg" alt="imageForModal"/>;
+        const modalImage3 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/3715/584477-aladmg030.jpg" alt="imageForModal"/>;
+        const modalImage4 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/3715/584479-aladmg028.jpg" alt="imageForModal"/>;
+        const modalImage5 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/3715/584476-aladmg031.jpg" alt="imageForModal"/>;
+        const modalImage6 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/3715/584475-aladmg032.jpg" alt="imageForModal"/>;
+        const modalImage7 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/3715/584469-aladmg021.jpg" alt="imageForModal"/>;
         axios.get(proxyUrl + segaGameUrl + gameGUID + GiantBombAPI + dataFormat)
         .then(res => {
             let gameESRBRating = res.data.results.original_game_rating[0].id;
@@ -35,6 +54,7 @@ export default class aladdinGameLink extends Component {
                 this.setState({gameRating: esrbRatingIconT})
             else if(gameESRBRating === 16)
                 this.setState({gameRating: esrbRatingIconM})
+            this.setState({dataAPILink: spGiantBombIcon})
             this.setState({
                 game: {
                     gameName: res.data.results.name,
@@ -55,8 +75,28 @@ export default class aladdinGameLink extends Component {
                     gameReleaseSectionHeader: "Release Date:",
                     //Rating Data (Adjusted to ESRB)
                     gameRatingSectionHeader: "Rated:",
-                    
-                }
+                    // Giant Bomb Footer Logo
+                    giantBombFooter: "Data provided courtesy of ",
+                    // Images
+                    gameImage1: image1,
+                    gameImage2: image2,
+                    gameImage3: image3,
+                    gameImage4: image4,
+                    gameImage5: image5,
+                    gameImage6: image6,
+                    gameImage7: image7,
+                    gameModalImage1: modalImage1,
+                    gameModalImage2: modalImage2,
+                    gameModalImage3: modalImage3,
+                    gameModalImage4: modalImage4,
+                    gameModalImage5: modalImage5,
+                    gameModalImage6: modalImage6,
+                    gameModalImage7: modalImage7,
+                    // Link to source material
+                    giantBombLink: "https://www.giantbomb.com/disneys-aladdin/" + gameGUID + "/"
+
+                },
+
             });
             console.log(res.data);
         })
@@ -64,13 +104,24 @@ export default class aladdinGameLink extends Component {
             console.log("error", e);
         });
     }
+    // Styled Components
     render() {
+        const GamePageHeaderFont = styled.h1`
+            color: black;
+            -webkit-text-stroke: 1px #f25ea4;
+            text-shadow: 0 0 4px #f25ea4;
+            font-family: 'LemonMilk';
+        `;
+
+
         return (
             <div class="container">
                 <div class="card bg-transparent pt-2">
                     <div class="row">
                         <div class="container">
-                            <h1 class="gameTitle mx-auto">{this.state.game.gameName}</h1>
+                            <GamePageHeaderFont>
+                                {this.state.game.gameName}
+                            </GamePageHeaderFont>
                         </div>
                     </div>
                     <div class="row">
@@ -86,9 +137,9 @@ export default class aladdinGameLink extends Component {
                                                     <strong class="sectionHeader">{this.state.game.gameDeveloperSectionHeader}</strong>
                                                 </td>
                                                 <td class="gameDataRows">
-                                                    <div class="row developerRow"><h6>{this.state.game.gameDeveloper1}</h6></div>
-                                                    <div class="row developerRow"><h6>{this.state.game.gameDeveloper2}</h6></div>
-                                                    <div class="row developerRow"><h6>{this.state.game.gameDeveloper3}</h6></div>
+                                                    <div class="row developerRow"><h6 class="rowFont">{this.state.game.gameDeveloper1}</h6></div>
+                                                    <div class="row developerRow"><h6 class="rowFont">{this.state.game.gameDeveloper2}</h6></div>
+                                                    <div class="row developerRow"><h6 class="rowFont">{this.state.game.gameDeveloper3}</h6></div>
                                                 </td>
                                             </tr> 
                                             <tr> {/* Genre Row */}
@@ -96,9 +147,9 @@ export default class aladdinGameLink extends Component {
                                                     <strong class="sectionHeader">{this.state.game.gameGenreSectionHeader}</strong>
                                                 </td>
                                                 <td class="gameDataRows">
-                                                    <div class="row genreRow"><h6>{this.state.game.gameGenre1}</h6></div>
-                                                    <div class="row genreRow"><h6>{this.state.game.gameGenre2}</h6></div>
-                                                    <div class="row genreRow"><h6>{this.state.game.gameGenre3}</h6></div>
+                                                    <div class="row genreRow"><h6 class="rowFont">{this.state.game.gameGenre1}</h6></div>
+                                                    <div class="row genreRow"><h6 class="rowFont">{this.state.game.gameGenre2}</h6></div>
+                                                    <div class="row genreRow"><h6 class="rowFont">{this.state.game.gameGenre3}</h6></div>
                                                 </td>
                                             </tr> 
                                             <tr> {/* Release Date Row */}
@@ -106,7 +157,7 @@ export default class aladdinGameLink extends Component {
                                                     <strong class="sectionHeader">{this.state.game.gameReleaseSectionHeader}</strong>
                                                 </td>
                                                 <td class="gameDataRows">
-                                                    <div class="row releaseRow"><h6>{this.state.game.releaseDate}</h6></div>
+                                                    <div class="row releaseRow"><h6 class="rowFont">{this.state.game.releaseDate}</h6></div>
                                                 </td>
                                             </tr> 
                                             <tr> {/* Rating Row */}
@@ -131,10 +182,40 @@ export default class aladdinGameLink extends Component {
                                     </div>
                                 </div>
                             </div> 
-                            <div class="col-sm-4 pb-2"></div> {/* Material image Grid */}
+                            <div class="col-sm-4 pb-2"> {/* Material image Grid */}
+                                <div class="column">
+                                    <a href="#gameImage1Modal" data-toggle="modal" data-target="#gameImage1Modal">
+                                        {this.state.game.gameImage1}
+                                    </a>
+                                    <a href="#gameImage2Modal" data-toggle="modal" data-target="#gameImage2Modal">
+                                        {this.state.game.gameImage2}
+                                    </a>
+                                    <a href="#gameImage3Modal" data-toggle="modal" data-target="#gameImage3Modal">
+                                        {this.state.game.gameImage3}
+                                    </a>
+                                    <a href="#gameImage4Modal" data-toggle="modal" data-target="#gameImage4Modal">
+                                        {this.state.game.gameImage4}
+                                    </a>
+                                    <a href="#gameImage5Modal" data-toggle="modal" data-target="#gameImage5Modal">
+                                        {this.state.game.gameImage5}
+                                    </a>
+                                    <a href="#gameImage6Modal" data-toggle="modal" data-target="#gameImage6Modal">
+                                        {this.state.game.gameImage6}
+                                    </a>
+                                    <a href="#gameImage7Modal" data-toggle="modal" data-target="#gameImage7Modal">
+                                        {this.state.game.gameImage7}
+                                    </a>
+                                </div>
+                            </div> 
                     </div>
-                <div class="row">
-                    <div class="mx-auto"><h6>Data Provided Courtesy of GiantBomb (add link)</h6></div>
+                <div class="row"> {/* Footer Row */}
+                    <div class="mx-auto">
+                        <h6 class="footerFont">{this.state.game.giantBombFooter}
+                            <a href={this.state.game.giantBombLink} target="_blank">
+                                {this.state.dataAPILink}
+                            </a>  
+                        </h6>
+                    </div>
                 </div>
                 </div>
                 <div class="row">
@@ -142,6 +223,111 @@ export default class aladdinGameLink extends Component {
                         <div class="grid"></div>
                     </div>
                 </div>
+                {/* Image 1 Modal */}
+                    <div class="modal fade" id="gameImage1Modal" tabindex="-1" role="dialog" aria-labelledby="gameImage1ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {this.state.game.gameModalImage1}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {/* Image 2 Modal */}
+                    <div class="modal fade" id="gameImage2Modal" tabindex="-1" role="dialog" aria-labelledby="gameImage2ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {this.state.game.gameModalImage2}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {/* Image 3 Modal */}
+                    <div class="modal fade" id="gameImage3Modal" tabindex="-1" role="dialog" aria-labelledby="gameImage3ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {this.state.game.gameModalImage3}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {/* Image 4 Modal */}
+                    <div class="modal fade" id="gameImage4Modal" tabindex="-1" role="dialog" aria-labelledby="gameImage4ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {this.state.game.gameModalImage4}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {/* Image 5 Modal */}
+                    <div class="modal fade" id="gameImage5Modal" tabindex="-1" role="dialog" aria-labelledby="gameImage5ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {this.state.game.gameModalImage5}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {/* Image 6 Modal */}
+                    <div class="modal fade" id="gameImage6Modal" tabindex="-1" role="dialog" aria-labelledby="gameImage6ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {this.state.game.gameModalImage6}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {/* Image 7 Modal */}
+                    <div class="modal fade" id="gameImage7Modal" tabindex="-1" role="dialog" aria-labelledby="gameImage7ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {this.state.game.gameModalImage7}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
         )}
 }
