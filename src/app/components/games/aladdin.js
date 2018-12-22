@@ -60,6 +60,7 @@ export default class aladdinGameLink extends Component {
                     gameName: res.data.results.name,
                     gameImage: res.data.results.images[4].super_url,
                     gameStory: gameDescription,
+                    gameStoryTitle: "Overview",
                     //Developer Data
                     gameDeveloper1: res.data.results.developers[1].name,
                     gameDeveloper2: res.data.results.developers[2].name,
@@ -104,143 +105,289 @@ export default class aladdinGameLink extends Component {
             console.log("error", e);
         });
     }
-    // Styled Components
+    
     render() {
-        const GamePageHeaderFont = styled.h1`
+        // Styled Components
+        const GamePageHeaderFont = styled.h1` /* Game Header */
             color: black;
             -webkit-text-stroke: 1px #f25ea4;
             text-shadow: 0 0 4px #f25ea4;
-            font-family: 'LemonMilk';
+            font-family: 'Roboto-Black';
+        `;
+        const OverviewHeaderFont = styled.h3` /* Overview Header */
+            font-family: 'Roboto-Regular';
+        `;
+        const OverviewBodyFont = styled.p` /* Overview Body */
+            font-family: 'Roboto-Thin';
+        `;
+        const FooterFont = styled.h6` /* Footer */
+            font-family: 'Roboto-Black';
+        `;
+        const RowHeaderFont = styled.strong`
+            font-family: 'Roboto-Medium';
+            color: #f25ea4;
+        `;
+        const RowContentFont = styled.h6`
+            font-family: 'Roboto-Medium';
         `;
 
-
         return (
-            <div class="container">
-                <div class="card bg-transparent pt-2">
-                    <div class="row">
-                        <div class="container">
-                            <GamePageHeaderFont>
-                                {this.state.game.gameName}
-                            </GamePageHeaderFont>
+            <div>
+                <div class="container-fluid mobileGrid d-xl-none"> {/* For sceens smaller than "Large" */}
+                    <div class="container-fluid">
+                        <div class="card cardFrontPage">
+                            <div class="row"> {/* Logo Section */}
+                                <div class="mx-auto"><img class="logoSmallerScreens container" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" /></div>
+                            </div>
+                            <div class="row">
+                                <div class="container pb-2">
+                                    <GamePageHeaderFont>
+                                        {this.state.game.gameName}
+                                    </GamePageHeaderFont>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4 pb-2 tableColumn">
+                                    <div class="container">
+                                        <img src={this.state.game.gameImage} class="rounded gamePageThumbnail" />
+                                    </div>
+                                    <div class="table-responsive container">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr> {/* Developer Row */}
+                                                    <td class="tableHeader">
+                                                        <RowHeaderFont>{this.state.game.gameDeveloperSectionHeader}</RowHeaderFont>
+                                                    </td>
+                                                    <td class="gameDataRows">
+                                                        <div class="row developerRow"><RowContentFont>{this.state.game.gameDeveloper1}</RowContentFont></div>
+                                                        <div class="row developerRow"><RowContentFont>{this.state.game.gameDeveloper2}</RowContentFont></div>
+                                                        <div class="row developerRow"><RowContentFont>{this.state.game.gameDeveloper3}</RowContentFont></div>
+                                                    </td>
+                                                </tr> 
+                                                <tr> {/* Genre Row */}
+                                                    <td class="tableHeader">
+                                                        <RowHeaderFont>{this.state.game.gameGenreSectionHeader}</RowHeaderFont>
+                                                    </td>
+                                                    <td class="gameDataRows">
+                                                        <div class="row genreRow"><RowContentFont>{this.state.game.gameGenre1}</RowContentFont></div>
+                                                        <div class="row genreRow"><RowContentFont>{this.state.game.gameGenre2}</RowContentFont></div>
+                                                        <div class="row genreRow"><RowContentFont>{this.state.game.gameGenre3}</RowContentFont></div>
+                                                    </td>
+                                                </tr> 
+                                                <tr> {/* Release Date Row */}
+                                                    <td class="tableHeader">
+                                                        <RowHeaderFont>{this.state.game.gameReleaseSectionHeader}</RowHeaderFont>
+                                                    </td>
+                                                    <td class="gameDataRows">
+                                                        <div class="row releaseRow"><RowContentFont>{this.state.game.releaseDate}</RowContentFont></div>
+                                                    </td>
+                                                </tr> 
+                                                <tr> {/* Rating Row */}
+                                                    <td class="tableHeader">
+                                                        <RowHeaderFont>{this.state.game.gameRatingSectionHeader}</RowHeaderFont>
+                                                    </td>
+                                                    <td class="gameDataRows">
+                                                        <div class="row ratingRow">{this.state.gameRating}</div>
+                                                    </td>
+                                                </tr> 
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div> {/* Game data */}
+                                <div class="col-sm-4 pb-2"> {/* Game overview/description */}
+                                    <div class="container">
+                                        <div class="row">
+                                            <h3 class="gameDescriptionHeading mx-auto"><OverviewHeaderFont>{this.state.game.gameStoryTitle}</OverviewHeaderFont></h3>
+                                        </div>
+                                        <div class="row">
+                                            <div class="my-auto"><OverviewBodyFont>{this.state.game.gameStory}</OverviewBodyFont></div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="col-sm-4 pb-2"> {/* Material image Grid */}
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="mx-auto">
+                                                <a href="#gameImage1Modal" data-toggle="modal" data-target="#gameImage1Modal">
+                                                    {this.state.game.gameImage1}
+                                                </a>
+                                                <a href="#gameImage2Modal" class="pl-1 pr-1" data-toggle="modal" data-target="#gameImage2Modal">
+                                                    {this.state.game.gameImage2}
+                                                </a>
+                                                <a href="#gameImage3Modal" data-toggle="modal" data-target="#gameImage3Modal">
+                                                    {this.state.game.gameImage3}
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="mx-auto pt-1 pb-1">
+                                                <a href="#gameImage4Modal" data-toggle="modal" data-target="#gameImage4Modal">
+                                                    {this.state.game.gameImage4}
+                                                </a>
+                                                <a href="#gameImage5Modal" class="pl-1 pr-1" data-toggle="modal" data-target="#gameImage5Modal">
+                                                    {this.state.game.gameImage5}
+                                                </a>
+                                                <a href="#gameImage6Modal"  data-toggle="modal" data-target="#gameImage6Modal">
+                                                    {this.state.game.gameImage6}
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <a href="#gameImage7Modal" class="mx-auto" data-toggle="modal" data-target="#gameImage7Modal">
+                                                {this.state.game.gameImage7}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="row"> {/* Footer Row */}
+                                <div class="mx-auto">
+                                    <h6 class="footerFont"><FooterFont>
+                                        {this.state.game.giantBombFooter}
+                                        <a href={this.state.game.giantBombLink} target="_blank">
+                                            {this.state.dataAPILink}
+                                        </a>  
+                                    </FooterFont></h6>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+                <div class="container-fluid d-none d-xl-block"> {/* For larger Sceens */}
+                    <img class="logoLargerScreens" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" width="300" />
+                    <div class="card bg-transparent pt-2">
+                        <div class="row">
+                            <div class="container">
+                                <GamePageHeaderFont>
+                                    {this.state.game.gameName}
+                                </GamePageHeaderFont>
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-sm-4 pb-2">
+                                    <div class="container">
+                                        <img src={this.state.game.gameImage} class="rounded gamePageThumbnail" />
+                                    </div>
+                                    <div class="table-responsive container">
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr> {/* Developer Row */}
+                                                    <td class="tableHeader">
+                                                        <RowHeaderFont>{this.state.game.gameDeveloperSectionHeader}</RowHeaderFont>
+                                                    </td>
+                                                    <td class="gameDataRows">
+                                                        <div class="row developerRow"><RowContentFont>{this.state.game.gameDeveloper1}</RowContentFont></div>
+                                                        <div class="row developerRow"><RowContentFont>{this.state.game.gameDeveloper2}</RowContentFont></div>
+                                                        <div class="row developerRow"><RowContentFont>{this.state.game.gameDeveloper3}</RowContentFont></div>
+                                                    </td>
+                                                </tr> 
+                                                <tr> {/* Genre Row */}
+                                                    <td class="tableHeader">
+                                                        <RowHeaderFont>{this.state.game.gameGenreSectionHeader}</RowHeaderFont>
+                                                    </td>
+                                                    <td class="gameDataRows">
+                                                        <div class="row genreRow"><RowContentFont>{this.state.game.gameGenre1}</RowContentFont></div>
+                                                        <div class="row genreRow"><RowContentFont>{this.state.game.gameGenre2}</RowContentFont></div>
+                                                        <div class="row genreRow"><RowContentFont>{this.state.game.gameGenre3}</RowContentFont></div>
+                                                    </td>
+                                                </tr> 
+                                                <tr> {/* Release Date Row */}
+                                                    <td class="tableHeader">
+                                                        <RowHeaderFont>{this.state.game.gameReleaseSectionHeader}</RowHeaderFont>
+                                                    </td>
+                                                    <td class="gameDataRows">
+                                                        <div class="row releaseRow"><RowContentFont>{this.state.game.releaseDate}</RowContentFont></div>
+                                                    </td>
+                                                </tr> 
+                                                <tr> {/* Rating Row */}
+                                                    <td class="tableHeader">
+                                                        <RowHeaderFont>{this.state.game.gameRatingSectionHeader}</RowHeaderFont>
+                                                    </td>
+                                                    <td class="gameDataRows">
+                                                        <div class="row ratingRow">{this.state.gameRating}</div>
+                                                    </td>
+                                                </tr> 
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div> {/* Game data */}
+                                <div class="col-sm-8 pb-2"> {/* Game overview/description */}
+                                    <div class="container">
+                                        <div class="row">
+                                            <h3 class="gameDescriptionHeading mx-auto"><OverviewHeaderFont>{this.state.game.gameStoryTitle}</OverviewHeaderFont></h3>
+                                        </div>
+                                        <div class="row">
+                                            <div class="my-auto pr-2"><OverviewBodyFont>{this.state.game.gameStory}</OverviewBodyFont></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="mx-auto">
+                                                <a href="#gameImage1Modal" data-toggle="modal" data-target="#gameImage1Modal">
+                                                    {this.state.game.gameImage1}
+                                                </a>
+                                                <a href="#gameImage2Modal" class="pl-1 pr-1" data-toggle="modal" data-target="#gameImage2Modal">
+                                                    {this.state.game.gameImage2}
+                                                </a>
+                                                <a href="#gameImage3Modal" data-toggle="modal" data-target="#gameImage3Modal">
+                                                    {this.state.game.gameImage3}
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="mx-auto pt-1 pb-1">
+                                                <a href="#gameImage4Modal" data-toggle="modal" data-target="#gameImage4Modal">
+                                                    {this.state.game.gameImage4}
+                                                </a>
+                                                <a href="#gameImage5Modal" class="pl-1 pr-1" data-toggle="modal" data-target="#gameImage5Modal">
+                                                    {this.state.game.gameImage5}
+                                                </a>
+                                                <a href="#gameImage6Modal"  data-toggle="modal" data-target="#gameImage6Modal">
+                                                    {this.state.game.gameImage6}
+                                                </a>
+                                                <a href="#gameImage7Modal" class="mx-auto" data-toggle="modal" data-target="#gameImage7Modal">
+                                                    {this.state.game.gameImage7}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                        </div>
+                    <div class="row"> {/* Footer Row */}
+                        <div class="mx-auto">
+                            <h6 class="footerFont"><FooterFont>
+                                {this.state.game.giantBombFooter}
+                                <a href={this.state.game.giantBombLink} target="_blank">
+                                    {this.state.dataAPILink}
+                                </a>  
+                            </FooterFont></h6>
+                        </div>
+                    </div>
+                    </div>
                     <div class="row">
-                            <div class="col-sm-4 pb-2">
-                                <div class="container">
-                                    <img src={this.state.game.gameImage} class="rounded gamePageThumbnail" />
-                                </div>
-                                <div class="table-responsive container">
-                                    <table class="table">
-                                        <tbody>
-                                            <tr> {/* Developer Row */}
-                                                <td class="tableHeader">
-                                                    <strong class="sectionHeader">{this.state.game.gameDeveloperSectionHeader}</strong>
-                                                </td>
-                                                <td class="gameDataRows">
-                                                    <div class="row developerRow"><h6 class="rowFont">{this.state.game.gameDeveloper1}</h6></div>
-                                                    <div class="row developerRow"><h6 class="rowFont">{this.state.game.gameDeveloper2}</h6></div>
-                                                    <div class="row developerRow"><h6 class="rowFont">{this.state.game.gameDeveloper3}</h6></div>
-                                                </td>
-                                            </tr> 
-                                            <tr> {/* Genre Row */}
-                                                <td class="tableHeader">
-                                                    <strong class="sectionHeader">{this.state.game.gameGenreSectionHeader}</strong>
-                                                </td>
-                                                <td class="gameDataRows">
-                                                    <div class="row genreRow"><h6 class="rowFont">{this.state.game.gameGenre1}</h6></div>
-                                                    <div class="row genreRow"><h6 class="rowFont">{this.state.game.gameGenre2}</h6></div>
-                                                    <div class="row genreRow"><h6 class="rowFont">{this.state.game.gameGenre3}</h6></div>
-                                                </td>
-                                            </tr> 
-                                            <tr> {/* Release Date Row */}
-                                                <td class="tableHeader">
-                                                    <strong class="sectionHeader">{this.state.game.gameReleaseSectionHeader}</strong>
-                                                </td>
-                                                <td class="gameDataRows">
-                                                    <div class="row releaseRow"><h6 class="rowFont">{this.state.game.releaseDate}</h6></div>
-                                                </td>
-                                            </tr> 
-                                            <tr> {/* Rating Row */}
-                                                <td class="tableHeader">
-                                                    <strong class="sectionHeader">{this.state.game.gameRatingSectionHeader}</strong>
-                                                </td>
-                                                <td class="gameDataRows">
-                                                    <div class="row ratingRow">{this.state.gameRating}</div>
-                                                </td>
-                                            </tr> 
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div> {/* Game data */}
-                            <div class="col-sm-4 pb-2"> {/* Game overview/description */}
-                                <div class="container">
-                                    <div class="row">
-                                        <h3 class="gameDescriptionHeading mx-auto">Overview</h3>
-                                    </div>
-                                    <div class="row">
-                                        <p class="gameDescription">{this.state.game.gameStory}</p>
-                                    </div>
-                                </div>
-                            </div> 
-                            <div class="col-sm-4 pb-2"> {/* Material image Grid */}
-                                <div class="column">
-                                    <a href="#gameImage1Modal" data-toggle="modal" data-target="#gameImage1Modal">
-                                        {this.state.game.gameImage1}
-                                    </a>
-                                    <a href="#gameImage2Modal" data-toggle="modal" data-target="#gameImage2Modal">
-                                        {this.state.game.gameImage2}
-                                    </a>
-                                    <a href="#gameImage3Modal" data-toggle="modal" data-target="#gameImage3Modal">
-                                        {this.state.game.gameImage3}
-                                    </a>
-                                    <a href="#gameImage4Modal" data-toggle="modal" data-target="#gameImage4Modal">
-                                        {this.state.game.gameImage4}
-                                    </a>
-                                    <a href="#gameImage5Modal" data-toggle="modal" data-target="#gameImage5Modal">
-                                        {this.state.game.gameImage5}
-                                    </a>
-                                    <a href="#gameImage6Modal" data-toggle="modal" data-target="#gameImage6Modal">
-                                        {this.state.game.gameImage6}
-                                    </a>
-                                    <a href="#gameImage7Modal" data-toggle="modal" data-target="#gameImage7Modal">
-                                        {this.state.game.gameImage7}
-                                    </a>
-                                </div>
-                            </div> 
-                    </div>
-                <div class="row"> {/* Footer Row */}
-                    <div class="mx-auto">
-                        <h6 class="footerFont">{this.state.game.giantBombFooter}
-                            <a href={this.state.game.giantBombLink} target="_blank">
-                                {this.state.dataAPILink}
-                            </a>  
-                        </h6>
-                    </div>
-                </div>
-                </div>
-                <div class="row">
-                    <div class="container-fluid">
-                        <div class="grid"></div>
-                    </div>
+                        <div class="container-fluid">
+                            <div class="grid"></div>
+                        </div>
+                    </div> 
                 </div>
                 {/* Image 1 Modal */}
                     <div class="modal fade" id="gameImage1Modal" tabindex="-1" role="dialog" aria-labelledby="gameImage1ModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    {this.state.game.gameModalImage1}
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                            <div class="container-fluid">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {this.state.game.gameModalImage1}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 {/* Image 2 Modal */}
                     <div class="modal fade" id="gameImage2Modal" tabindex="-1" role="dialog" aria-labelledby="gameImage2ModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -255,7 +402,7 @@ export default class aladdinGameLink extends Component {
                     </div>
                 {/* Image 3 Modal */}
                     <div class="modal fade" id="gameImage3Modal" tabindex="-1" role="dialog" aria-labelledby="gameImage3ModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -270,7 +417,7 @@ export default class aladdinGameLink extends Component {
                     </div>
                 {/* Image 4 Modal */}
                     <div class="modal fade" id="gameImage4Modal" tabindex="-1" role="dialog" aria-labelledby="gameImage4ModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -285,7 +432,7 @@ export default class aladdinGameLink extends Component {
                     </div>
                 {/* Image 5 Modal */}
                     <div class="modal fade" id="gameImage5Modal" tabindex="-1" role="dialog" aria-labelledby="gameImage5ModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -300,7 +447,7 @@ export default class aladdinGameLink extends Component {
                     </div>
                 {/* Image 6 Modal */}
                     <div class="modal fade" id="gameImage6Modal" tabindex="-1" role="dialog" aria-labelledby="gameImage6ModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -315,7 +462,7 @@ export default class aladdinGameLink extends Component {
                     </div>
                 {/* Image 7 Modal */}
                     <div class="modal fade" id="gameImage7Modal" tabindex="-1" role="dialog" aria-labelledby="gameImage7ModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
+                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
