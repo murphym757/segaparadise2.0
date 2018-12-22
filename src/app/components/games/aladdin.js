@@ -29,7 +29,7 @@ export default class aladdinGameLink extends Component {
         const esrbRatingIconE = <img class="esrbRatingIcon" src="../src/app/assets/images/ratingIcons/esrb_e.png" alt="ratingIcon" height="42" width="42" />;
         const esrbRatingIconT = <img class="esrbRatingIcon" src="../src/app/assets/images/ratingIcons/esrb_t.png" alt="ratingIcon" height="42" width="42" />;
         const esrbRatingIconM = <img class="esrbRatingIcon" src="../src/app/assets/images/ratingIcons/esrb_m.png" alt="ratingIcon" height="42" width="42" />;
-        const spGiantBombIcon = <img class="spGBIcon" src="../src/app/assets/images/segaParadise2GBLogo.svg" alt="siteLogoIcon" height="42" width="42" />;
+        const spGiantBombIcon = <img class="spGBIcon" src="../src/app/assets/images/segaParadise2GBLogo.png" alt="siteLogoIcon" height="42" width="42" />;
         //Images
         const image1 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/3715/584486-aladmg022.jpg" alt="imageForGrid" height="100" Width="100" />;
         const image2 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/3715/584483-aladmg024.jpg" alt="imageForGrid" height="100" Width="100" />;
@@ -115,6 +115,7 @@ export default class aladdinGameLink extends Component {
             font-family: 'Roboto-Black';
         `;
         const OverviewHeaderFont = styled.h3` /* Overview Header */
+            color: #70bac9;
             font-family: 'Roboto-Regular';
         `;
         const OverviewBodyFont = styled.p` /* Overview Body */

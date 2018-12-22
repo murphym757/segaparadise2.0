@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
+import styled from 'styled-components';
 
 const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 const segaGameUrl = "https://www.giantbomb.com/api/game/";
@@ -325,10 +326,13 @@ export default class MainSource extends Component {
     }
 
     render() {
+        const FooterFont = styled.h6` /* Footer */
+            font-family: 'Roboto-Black';
+        `;
         return (
             <div>
             <div class="container-fluid d-none d-xl-block"> {/* For larger Sceens */}
-                <h1>Logo</h1>
+            <img class="logoLargerScreens" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" width="300" />
                 <div class="row pt-2 pb-2"> {/* Row 1 */}
                     <div class="container">
                     <Link class="homeLink" to="/games/1"><img src={this.state.aladdin.gameImage} class="rounded homepageThumbnail col-3" /></Link>
@@ -364,7 +368,11 @@ export default class MainSource extends Component {
                 <div class="row">
                     <div class="container-fluid">
                         <div class="grid"></div>
-                        <h3 class="mx-auto">Giant Bomb Logo and link</h3>
+                        <div class="mx-auto">
+                            <FooterFont>
+                                Data provided courtesy of <img class="spGBIcon" src="../src/app/assets/images/segaParadise2GBLogo.png" alt="siteLogoIcon" height="42" width="42" /> 
+                            </FooterFont>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -373,7 +381,7 @@ export default class MainSource extends Component {
                 <div class="container-fluid">
                 <div class="card cardFrontPage">
                 <div class="row"> {/* Logo Section */}
-                    <h1 class="mx-auto">Logo</h1>
+                <div class="mx-auto"><img class="logoSmallerScreens container" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" /></div>
                 </div>
                 <div class="row"> {/* Games Section */}
                     <div class="row pt-2 pb-2 mx-auto"> {/* Row 1 */}
@@ -410,7 +418,11 @@ export default class MainSource extends Component {
                 </div>
                 </div>
                 <div class="row"> {/* Source Section */}
-                    <h3 class="mx-auto">Giant Bomb Logo and link</h3>
+                    <div class="mx-auto">
+                        <FooterFont>
+                            Data provided courtesy of <img class="spGBIcon" src="../src/app/assets/images/segaParadise2GBLogo.png" alt="siteLogoIcon" height="42" width="42" /> 
+                        </FooterFont>
+                    </div>
                 </div> 
                 </div> 
                 </div>

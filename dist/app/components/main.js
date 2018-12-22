@@ -11,6 +11,8 @@ var _reactRouterDom = require("react-router-dom");
 
 var _axios = _interopRequireDefault(require("axios"));
 
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
@@ -385,9 +387,19 @@ function (_Component) {
   _createClass(MainSource, [{
     key: "render",
     value: function render() {
+      var FooterFont = _styledComponents.default.h6.withConfig({
+        displayName: "main__FooterFont",
+        componentId: "sc-1ucehs2-0"
+      })(["  font-family:'Roboto-Black';"]);
+
       return _react.default.createElement("div", null, _react.default.createElement("div", {
         class: "container-fluid d-none d-xl-block"
-      }, " ", _react.default.createElement("h1", null, "Logo"), _react.default.createElement("div", {
+      }, " ", _react.default.createElement("img", {
+        class: "logoLargerScreens",
+        src: "../src/app/assets/images/SegaParadise2Logo.svg",
+        alt: "imageForGrid",
+        width: "300"
+      }), _react.default.createElement("div", {
         class: "row pt-2 pb-2"
       }, " ", _react.default.createElement("div", {
         class: "container"
@@ -460,9 +472,15 @@ function (_Component) {
         class: "container-fluid"
       }, _react.default.createElement("div", {
         class: "grid"
-      }), _react.default.createElement("h3", {
+      }), _react.default.createElement("div", {
         class: "mx-auto"
-      }, "Giant Bomb Logo and link")))), _react.default.createElement("div", {
+      }, _react.default.createElement(FooterFont, null, "Data provided courtesy of ", _react.default.createElement("img", {
+        class: "spGBIcon",
+        src: "../src/app/assets/images/segaParadise2GBLogo.png",
+        alt: "siteLogoIcon",
+        height: "42",
+        width: "42"
+      })))))), _react.default.createElement("div", {
         class: "container-fluid mobileGrid d-xl-none"
       }, " ", _react.default.createElement("div", {
         class: "container-fluid"
@@ -470,9 +488,13 @@ function (_Component) {
         class: "card cardFrontPage"
       }, _react.default.createElement("div", {
         class: "row"
-      }, " ", _react.default.createElement("h1", {
+      }, " ", _react.default.createElement("div", {
         class: "mx-auto"
-      }, "Logo")), _react.default.createElement("div", {
+      }, _react.default.createElement("img", {
+        class: "logoSmallerScreens container",
+        src: "../src/app/assets/images/SegaParadise2Logo.svg",
+        alt: "imageForGrid"
+      }))), _react.default.createElement("div", {
         class: "row"
       }, " ", _react.default.createElement("div", {
         class: "row pt-2 pb-2 mx-auto"
@@ -588,9 +610,15 @@ function (_Component) {
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
       }))))), _react.default.createElement("div", {
         class: "row"
-      }, " ", _react.default.createElement("h3", {
+      }, " ", _react.default.createElement("div", {
         class: "mx-auto"
-      }, "Giant Bomb Logo and link"))))));
+      }, _react.default.createElement(FooterFont, null, "Data provided courtesy of ", _react.default.createElement("img", {
+        class: "spGBIcon",
+        src: "../src/app/assets/images/segaParadise2GBLogo.png",
+        alt: "siteLogoIcon",
+        height: "42",
+        width: "42"
+      }))))))));
     }
   }]);
 
