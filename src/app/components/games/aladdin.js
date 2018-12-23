@@ -286,6 +286,9 @@ export default class aladdinGameLink extends Component {
                                             {this.state.dataAPILink}
                                         </a>  
                                     </FooterFont></h6>
+                                    <a href={this.state.game.giantBombLink} target="_blank">
+                                            {this.state.dataAPILink}
+                                    </a>
                                 </div>
                             </div>
                         </div>
