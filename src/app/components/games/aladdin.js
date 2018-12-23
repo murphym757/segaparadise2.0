@@ -139,7 +139,7 @@ export default class aladdinGameLink extends Component {
                     <div class="container-fluid">
                         <div class="card cardFrontPage">
                             <div class="row"> {/* Logo Section */}
-                                <div class="mx-auto"><img class="logoSmallerScreens container" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" /></div>
+                                <div class="mx-auto"><img class="logoSmallerScreens container" src="../src/app/assets/images/SegaParadise2LogoAlt.svg" alt="imageForGrid" /></div>
                             </div>
                             <div class="row">
                                 <div class="mx-auto pt-5 pb-5">
@@ -170,7 +170,7 @@ export default class aladdinGameLink extends Component {
                     <div class="container-fluid">
                         <div class="card cardFrontPage">
                             <div class="row"> {/* Logo Section */}
-                                <div class="mx-auto"><Link to="/"><img class="logoSmallerScreens container" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" /></Link></div>
+                                <div class="mx-auto"><Link to="/"><img class="logoSmallerScreens container" src="../src/app/assets/images/SegaParadise2LogoAlt.svg" alt="imageForGrid" /></Link></div>
                             </div>
                             <div class="row text-focus-in">
                                 <div class="container pb-2">

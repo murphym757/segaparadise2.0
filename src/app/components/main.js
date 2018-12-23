@@ -354,7 +354,7 @@ export default class MainSource extends Component {
                     <div class="container-fluid">
                         <div class="card cardFrontPage">
                             <div class="row"> {/* Logo Section */}
-                                <div class="mx-auto"><img class="logoSmallerScreens container text-focus-in-home" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" /></div>
+                                <div class="mx-auto"><img class="logoSmallerScreens container text-focus-in-home" src="../src/app/assets/images/SegaParadise2LogoAlt.svg" alt="imageForGrid" /></div>
                             </div>
                             <div class="row">
                                 <div class="mx-auto pt-5 pb-5">
@@ -419,7 +419,7 @@ export default class MainSource extends Component {
                     <div class="container-fluid">
                         <div class="card cardFrontPage">
                             <div class="row"> {/* Logo Section */}
-                                <div class="mx-auto"><img class="logoSmallerScreens container" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" /></div>
+                                <div class="mx-auto"><img class="logoSmallerScreens container" src="../src/app/assets/images/SegaParadise2LogoAlt.svg" alt="imageForGrid" /></div>
                             </div>
                             <div class="row text-focus-in"> {/* Games Section */}
                                 <div class="row pt-2 pb-2 mx-auto"> {/* Row 1 */}
