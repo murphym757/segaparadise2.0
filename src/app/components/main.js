@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
+import { AtomSpinner } from 'react-epic-spinners';
 
 const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 const segaGameUrl = "https://www.giantbomb.com/api/game/";
@@ -12,6 +13,7 @@ export default class MainSource extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            isLoading: true,
             aladdin: {},
             lionKing: {},
             sonic1: {},
@@ -32,6 +34,9 @@ export default class MainSource extends Component {
     }
 
     componentDidMount = (e) => {
+        setTimeout(() => this.setState({isLoading: false}), 2018);
+    }
+    componentWillMount = (e) => {
         this.aladdinGameLink();
         this.lionKingGameLink();
         this.sonic1GameLink();
@@ -330,103 +335,136 @@ export default class MainSource extends Component {
             font-family: 'Roboto-Black';
         `;
         return (
+            this.state.isLoading ? 
+            <div>            
+                <div class="container-fluid d-none d-xl-block"> {/* For larger Sceens */}
+                    <img class="logoLargerScreens text-focus-in-home" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" width="300" />
+                    <div class="row">
+                        <div class="mx-auto pt-5 pb-5">
+                            <AtomSpinner color="#f25ea4" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container-fluid">
+                            <div class="grid"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid mobileGrid d-xl-none"> {/* For sceens smaller than "Large" */}
+                    <div class="container-fluid">
+                        <div class="card cardFrontPage">
+                            <div class="row"> {/* Logo Section */}
+                                <div class="mx-auto"><img class="logoSmallerScreens container text-focus-in-home" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" /></div>
+                            </div>
+                            <div class="row">
+                                <div class="mx-auto pt-5 pb-5">
+                                    <AtomSpinner color="#f25ea4" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>:
             <div>
-            <div class="container-fluid d-none d-xl-block"> {/* For larger Sceens */}
-            <img class="logoLargerScreens" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" width="300" />
-                <div class="row pt-2 pb-2"> {/* Row 1 */}
-                    <div class="container">
-                    <Link class="homeLink" to="/games/1"><img src={this.state.aladdin.gameImage} class="rounded homepageThumbnail col-3" /></Link>
-                        <img src={this.state.lionKing.gameImage} class="rounded homepageThumbnail col-3" /> 
-                        <img src={this.state.sonic1.gameImage} class="rounded homepageThumbnail col-3" />
-                        <img src={this.state.streetsOfRage2.gameImage} class="rounded homepageThumbnail col-3" />
-                    </div>
-                </div>
-                <div class="row pt-2 pb-2"> {/* Row 2 */}
-                    <div class="container">
-                        <img src={this.state.sonic2.gameImage} class="homepageThumbnail image-container col-3" />
-                        <img src={this.state.mortalKombat.gameImage} class="rounded image-container homepageThumbnail col-3" /> 
-                        <img src={this.state.pocahontas.gameImage} class="rounded homepageThumbnail col-3" />
-                        <img src={this.state.mjMoonwalker.gameImage} class="rounded homepageThumbnail col-3" />
-                    </div>
-                </div>
-                <div class="row pt-2 pb-2"> {/* Row 3 */}
-                    <div class="container">
-                        <img src={this.state.sonicNKnuckles.gameImage} class="rounded homepageThumbnail col-3" />
-                        <img src={this.state.toejamNEarl.gameImage} class="rounded homepageThumbnail col-3" /> 
-                        <img src={this.state.kidChameleon.gameImage} class="rounded homepageThumbnail col-3" />
-                        <img src={this.state.ecco1.gameImage} class="rounded homepageThumbnail col-3" />
-                    </div>
-                </div>
-                <div class="row pt-2 pb-2"> {/* Row 4 */}
-                    <div class="container">
-                        <img src={this.state.castleMickey.gameImage} class="rounded homepageThumbnail col-3" />
-                        <img src={this.state.streetFighter2.gameImage} class="rounded homepageThumbnail col-3" /> 
-                        <img src={this.state.tinyToons.gameImage} class="rounded homepageThumbnail col-3" />
-                        <img src={this.state.tmntHyperStoneHeist.gameImage} class="rounded homepageThumbnail col-3" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="container-fluid">
-                        <div class="grid"></div>
+                <div class="container-fluid d-none d-xl-block"> {/* For larger Sceens */}
+                <Link to="/"><img class="logoLargerScreens" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" width="300" /></Link>
+                    <div class="row text-focus-in">
                         <div class="mx-auto">
-                            <FooterFont>
-                                Data provided courtesy of <img class="spGBIcon" src="../src/app/assets/images/segaParadise2GBLogo.png" alt="siteLogoIcon" height="42" width="42" /> 
-                            </FooterFont>
+                            <div class="row pt-2 pb-2"> {/* Row 1 */}
+                                <div class="container">
+                                <Link class="homeLink" to="/games/1"><img src={this.state.aladdin.gameImage} class="rounded homepageThumbnail col-3" /></Link>
+                                    <img src={this.state.lionKing.gameImage} class="rounded homepageThumbnail col-3" /> 
+                                    <img src={this.state.sonic1.gameImage} class="rounded homepageThumbnail col-3" />
+                                    <img src={this.state.streetsOfRage2.gameImage} class="rounded homepageThumbnail col-3" />
+                                </div>
+                            </div>
+                            <div class="row pt-2 pb-2"> {/* Row 2 */}
+                                <div class="container">
+                                    <img src={this.state.sonic2.gameImage} class="homepageThumbnail image-container col-3" />
+                                    <img src={this.state.mortalKombat.gameImage} class="rounded image-container homepageThumbnail col-3" /> 
+                                    <img src={this.state.pocahontas.gameImage} class="rounded homepageThumbnail col-3" />
+                                    <img src={this.state.mjMoonwalker.gameImage} class="rounded homepageThumbnail col-3" />
+                                </div>
+                            </div>
+                            <div class="row pt-2 pb-2"> {/* Row 3 */}
+                                <div class="container">
+                                    <img src={this.state.sonicNKnuckles.gameImage} class="rounded homepageThumbnail col-3" />
+                                    <img src={this.state.toejamNEarl.gameImage} class="rounded homepageThumbnail col-3" /> 
+                                    <img src={this.state.kidChameleon.gameImage} class="rounded homepageThumbnail col-3" />
+                                    <img src={this.state.ecco1.gameImage} class="rounded homepageThumbnail col-3" />
+                                </div>
+                            </div>
+                            <div class="row pt-2 pb-2"> {/* Row 4 */}
+                                <div class="container">
+                                    <img src={this.state.castleMickey.gameImage} class="rounded homepageThumbnail col-3" />
+                                    <img src={this.state.streetFighter2.gameImage} class="rounded homepageThumbnail col-3" /> 
+                                    <img src={this.state.tinyToons.gameImage} class="rounded homepageThumbnail col-3" />
+                                    <img src={this.state.tmntHyperStoneHeist.gameImage} class="rounded homepageThumbnail col-3" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container-fluid">
+                            <div class="grid"></div>
+                            <div class="mx-auto text-focus-in">
+                                <FooterFont>
+                                    Data provided courtesy of <img class="spGBIcon" src="../src/app/assets/images/segaParadise2GBLogo.png" alt="siteLogoIcon" height="42" width="42" /> 
+                                </FooterFont>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="container-fluid mobileGrid d-xl-none"> {/* For sceens smaller than "Large" */}
-                
-                <div class="container-fluid">
-                <div class="card cardFrontPage">
-                <div class="row"> {/* Logo Section */}
-                <div class="mx-auto"><img class="logoSmallerScreens container" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" /></div>
-                </div>
-                <div class="row"> {/* Games Section */}
-                    <div class="row pt-2 pb-2 mx-auto"> {/* Row 1 */}
-                        <div class="container-fluid">
-                            <Link class="homeLink" to="/games/1"><img src={this.state.aladdin.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                            <Link class="homeLink pl-2 pr-1" to="/games/1"><img src={this.state.lionKing.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
-                            <Link class="homeLink pl-1 pr-2" to="/games/1"><img src={this.state.sonic1.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                            <Link class="homeLink" to="/games/1"><img src={this.state.streetsOfRage2.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                        </div>
-                    </div>
-                    <div class="row pt-2 pb-2 mx-auto"> {/* Row 2 */}
-                        <div class="container-fluid">
-                            <Link class="homeLink" to="/games/1"><img src={this.state.sonic2.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                            <Link class="homeLink pl-2 pr-1" to="/games/1"><img src={this.state.mortalKombat.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
-                            <Link class="homeLink pl-1 pr-2" to="/games/1"><img src={this.state.pocahontas.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                            <Link class="homeLink" to="/games/1"><img src={this.state.mjMoonwalker.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                        </div>
-                    </div>
-                    <div class="row pt-2 pb-2 mx-auto"> {/* Row 3 */}
-                        <div class="container-fluid">
-                            <Link class="homeLink" to="/games/1"><img src={this.state.sonicNKnuckles.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                            <Link class="homeLink pl-2 pr-1" to="/games/1"><img src={this.state.toejamNEarl.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
-                            <Link class="homeLink pr-2 pl-1" to="/games/1"><img src={this.state.kidChameleon.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                            <Link class="homeLink" to="/games/1"><img src={this.state.ecco1.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                        </div>
-                    </div>
-                    <div class="row pt-2 pb-2 mx-auto"> {/* Row 4 */}
+                <div class="container-fluid mobileGrid d-xl-none"> {/* For sceens smaller than "Large" */}
                     <div class="container-fluid">
-                        <Link class="homeLink" to="/games/1"><img src={this.state.castleMickey.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                        <Link class="homeLink pl-2 pr-1" to="/games/1"><img src={this.state.streetFighter2.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
-                        <Link class="homeLink pr-2 pl-1" to="/games/1"><img src={this.state.tinyToons.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                        <Link class="homeLink" to="/games/1"><img src={this.state.tmntHyperStoneHeist.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                        <div class="card cardFrontPage">
+                            <div class="row"> {/* Logo Section */}
+                                <div class="mx-auto"><img class="logoSmallerScreens container" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" /></div>
+                            </div>
+                            <div class="row text-focus-in"> {/* Games Section */}
+                                <div class="row pt-2 pb-2 mx-auto"> {/* Row 1 */}
+                                    <div class="container-fluid">
+                                        <Link class="homeLink" to="/games/1"><img src={this.state.aladdin.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                        <Link class="homeLink pl-2 pr-1" to="/games/1"><img src={this.state.lionKing.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
+                                        <Link class="homeLink pl-1 pr-2" to="/games/1"><img src={this.state.sonic1.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                        <Link class="homeLink" to="/games/1"><img src={this.state.streetsOfRage2.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                    </div>
+                                </div>
+                                <div class="row pt-2 pb-2 mx-auto"> {/* Row 2 */}
+                                    <div class="container-fluid">
+                                        <Link class="homeLink" to="/games/1"><img src={this.state.sonic2.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                        <Link class="homeLink pl-2 pr-1" to="/games/1"><img src={this.state.mortalKombat.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
+                                        <Link class="homeLink pl-1 pr-2" to="/games/1"><img src={this.state.pocahontas.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                        <Link class="homeLink" to="/games/1"><img src={this.state.mjMoonwalker.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                    </div>
+                                </div>
+                                <div class="row pt-2 pb-2 mx-auto"> {/* Row 3 */}
+                                    <div class="container-fluid">
+                                        <Link class="homeLink" to="/games/1"><img src={this.state.sonicNKnuckles.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                        <Link class="homeLink pl-2 pr-1" to="/games/1"><img src={this.state.toejamNEarl.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
+                                        <Link class="homeLink pr-2 pl-1" to="/games/1"><img src={this.state.kidChameleon.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                        <Link class="homeLink" to="/games/1"><img src={this.state.ecco1.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                    </div>
+                                </div>
+                                <div class="row pt-2 pb-2 mx-auto"> {/* Row 4 */}
+                                <div class="container-fluid">
+                                    <Link class="homeLink" to="/games/1"><img src={this.state.castleMickey.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                    <Link class="homeLink pl-2 pr-1" to="/games/1"><img src={this.state.streetFighter2.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
+                                    <Link class="homeLink pr-2 pl-1" to="/games/1"><img src={this.state.tinyToons.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                    <Link class="homeLink" to="/games/1"><img src={this.state.tmntHyperStoneHeist.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="row"> {/* Source Section */}
+                                <div class="mx-auto text-focus-in">
+                                    <FooterFont>
+                                        Data provided courtesy of <img class="spGBIcon" src="../src/app/assets/images/segaParadise2GBLogo.png" alt="siteLogoIcon" height="42" width="42" /> 
+                                    </FooterFont>
+                                </div>
+                            </div> 
+                        </div> 
                     </div>
                 </div>
-                </div>
-                <div class="row"> {/* Source Section */}
-                    <div class="mx-auto">
-                        <FooterFont>
-                            Data provided courtesy of <img class="spGBIcon" src="../src/app/assets/images/segaParadise2GBLogo.png" alt="siteLogoIcon" height="42" width="42" /> 
-                        </FooterFont>
-                    </div>
-                </div> 
-                </div> 
-                </div>
-            </div>
             </div>
           );
       }

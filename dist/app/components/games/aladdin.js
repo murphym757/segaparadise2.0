@@ -15,6 +15,8 @@ var _axios = _interopRequireDefault(require("axios"));
 
 var _reactMoment = _interopRequireDefault(require("react-moment"));
 
+var _reactEpicSpinners = require("react-epic-spinners");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
@@ -56,6 +58,14 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(aladdinGameLink).call(this, props));
 
     _this.componentDidMount = function (e) {
+      setTimeout(function () {
+        return _this.setState({
+          isLoading: false
+        });
+      }, 2018);
+    };
+
+    _this.componentWillMount = function (e) {
       _this.gameData();
     };
 
@@ -263,7 +273,8 @@ function (_Component) {
     _this.state = {
       game: {},
       gameRating: null,
-      dataAPILink: null
+      dataAPILink: null,
+      isLoading: true
     };
     return _this;
   }
@@ -280,7 +291,7 @@ function (_Component) {
       var OverviewHeaderFont = _styledComponents.default.h3.withConfig({
         displayName: "aladdin__OverviewHeaderFont",
         componentId: "sc-1v896iz-1"
-      })(["  color:#70bac9;font-family:'Roboto-Regular';"]);
+      })(["  color:#70bac9;font-family:'Roboto-Thin';"]);
 
       var OverviewBodyFont = _styledComponents.default.p.withConfig({
         displayName: "aladdin__OverviewBodyFont",
@@ -302,7 +313,7 @@ function (_Component) {
         componentId: "sc-1v896iz-5"
       })(["font-family:'Roboto-Medium';"]);
 
-      return _react.default.createElement("div", null, _react.default.createElement("div", {
+      return this.state.isLoading ? _react.default.createElement("div", null, _react.default.createElement("div", {
         class: "container-fluid mobileGrid d-xl-none"
       }, " ", _react.default.createElement("div", {
         class: "container-fluid"
@@ -319,9 +330,52 @@ function (_Component) {
       }))), _react.default.createElement("div", {
         class: "row"
       }, _react.default.createElement("div", {
+        class: "mx-auto pt-5 pb-5"
+      }, _react.default.createElement(_reactEpicSpinners.AtomSpinner, {
+        color: "#f25ea4"
+      })))))), _react.default.createElement("div", {
+        class: "container-fluid d-none d-xl-block"
+      }, " ", _react.default.createElement("img", {
+        class: "logoLargerScreens",
+        src: "../src/app/assets/images/SegaParadise2Logo.svg",
+        alt: "imageForGrid",
+        width: "300"
+      }), _react.default.createElement("div", {
+        class: "card bg-transparent pt-2"
+      }, _react.default.createElement("div", {
+        class: "row"
+      }, _react.default.createElement("div", {
+        class: "mx-auto pt-5 pb-5"
+      }, _react.default.createElement(_reactEpicSpinners.AtomSpinner, {
+        color: "#f25ea4"
+      }))), _react.default.createElement("div", {
+        class: "row"
+      }, _react.default.createElement("div", {
+        class: "container-fluid"
+      }, _react.default.createElement("div", {
+        class: "grid"
+      })))))) : _react.default.createElement("div", null, _react.default.createElement("div", {
+        class: "container-fluid mobileGrid d-xl-none"
+      }, " ", _react.default.createElement("div", {
+        class: "container-fluid"
+      }, _react.default.createElement("div", {
+        class: "card cardFrontPage"
+      }, _react.default.createElement("div", {
+        class: "row"
+      }, " ", _react.default.createElement("div", {
+        class: "mx-auto"
+      }, _react.default.createElement(_reactRouterDom.Link, {
+        to: "/"
+      }, _react.default.createElement("img", {
+        class: "logoSmallerScreens container",
+        src: "../src/app/assets/images/SegaParadise2Logo.svg",
+        alt: "imageForGrid"
+      })))), _react.default.createElement("div", {
+        class: "row text-focus-in"
+      }, _react.default.createElement("div", {
         class: "container pb-2"
       }, _react.default.createElement(GamePageHeaderFont, null, this.state.game.gameName))), _react.default.createElement("div", {
-        class: "row"
+        class: "row text-focus-in"
       }, _react.default.createElement("div", {
         class: "col-sm-4 pb-2 tableColumn"
       }, _react.default.createElement("div", {
@@ -366,7 +420,7 @@ function (_Component) {
       }, _react.default.createElement("div", {
         class: "row ratingRow"
       }, this.state.gameRating))))))), " ", _react.default.createElement("div", {
-        class: "col-sm-4 pb-2"
+        class: "col-sm-4 pb-2 text-focus-in"
       }, " ", _react.default.createElement("div", {
         class: "container"
       }, _react.default.createElement("div", {
@@ -378,7 +432,7 @@ function (_Component) {
       }, _react.default.createElement("div", {
         class: "my-auto"
       }, _react.default.createElement(OverviewBodyFont, null, this.state.game.gameStory))))), _react.default.createElement("div", {
-        class: "col-sm-4 pb-2"
+        class: "col-sm-4 pb-2 text-focus-in"
       }, " ", _react.default.createElement("div", {
         class: "container-fluid"
       }, _react.default.createElement("div", {
@@ -423,7 +477,7 @@ function (_Component) {
         "data-toggle": "modal",
         "data-target": "#gameImage7Modal"
       }, this.state.game.gameImage7))))), _react.default.createElement("div", {
-        class: "row"
+        class: "row text-focus-in"
       }, " ", _react.default.createElement("div", {
         class: "mx-auto"
       }, _react.default.createElement("h6", {
@@ -441,11 +495,11 @@ function (_Component) {
       }), _react.default.createElement("div", {
         class: "card bg-transparent pt-2"
       }, _react.default.createElement("div", {
-        class: "row"
+        class: "row text-focus-in"
       }, _react.default.createElement("div", {
         class: "container"
       }, _react.default.createElement(GamePageHeaderFont, null, this.state.game.gameName))), _react.default.createElement("div", {
-        class: "row"
+        class: "row text-focus-in"
       }, _react.default.createElement("div", {
         class: "col-sm-4 pb-2"
       }, _react.default.createElement("div", {
@@ -490,7 +544,7 @@ function (_Component) {
       }, _react.default.createElement("div", {
         class: "row ratingRow"
       }, this.state.gameRating))))))), " ", _react.default.createElement("div", {
-        class: "col-sm-8 pb-2"
+        class: "col-sm-8 pb-2 text-focus-in"
       }, " ", _react.default.createElement("div", {
         class: "container"
       }, _react.default.createElement("div", {
@@ -541,7 +595,7 @@ function (_Component) {
         "data-toggle": "modal",
         "data-target": "#gameImage7Modal"
       }, this.state.game.gameImage7)))))), _react.default.createElement("div", {
-        class: "row"
+        class: "row text-focus-in"
       }, " ", _react.default.createElement("div", {
         class: "mx-auto"
       }, _react.default.createElement("h6", {

@@ -3,6 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 import Moment from 'react-moment';
+import { AtomSpinner } from 'react-epic-spinners';
 
 
 const proxyUrl = "https://cors-anywhere.herokuapp.com/";
@@ -17,10 +18,14 @@ export default class aladdinGameLink extends Component {
         this.state = {
             game: {},
             gameRating: null,
-            dataAPILink: null
+            dataAPILink: null,
+            isLoading: true
         };
     }
     componentDidMount = (e) => {
+        setTimeout(() => this.setState({isLoading: false}), 2018);
+    }
+    componentWillMount = (e) => {
         this.gameData();
     }
     gameData = (e) => {
@@ -116,7 +121,7 @@ export default class aladdinGameLink extends Component {
         `;
         const OverviewHeaderFont = styled.h3` /* Overview Header */
             color: #70bac9;
-            font-family: 'Roboto-Regular';
+            font-family: 'Roboto-Thin';
         `;
         const OverviewBodyFont = styled.p` /* Overview Body */
             font-family: 'Roboto-Thin';
@@ -133,7 +138,8 @@ export default class aladdinGameLink extends Component {
         `;
 
         return (
-            <div>
+            this.state.isLoading ? 
+            <div>            
                 <div class="container-fluid mobileGrid d-xl-none"> {/* For sceens smaller than "Large" */}
                     <div class="container-fluid">
                         <div class="card cardFrontPage">
@@ -141,13 +147,44 @@ export default class aladdinGameLink extends Component {
                                 <div class="mx-auto"><img class="logoSmallerScreens container" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" /></div>
                             </div>
                             <div class="row">
+                                <div class="mx-auto pt-5 pb-5">
+                                    <AtomSpinner color="#f25ea4" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid d-none d-xl-block"> {/* For larger Sceens */}
+                    <img class="logoLargerScreens" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" width="300" />
+                    <div class="card bg-transparent pt-2">
+                        <div class="row">
+                            <div class="mx-auto pt-5 pb-5">
+                                <AtomSpinner color="#f25ea4" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="container-fluid">
+                                <div class="grid"></div>
+                            </div>
+                        </div> 
+                        </div>
+                    </div>
+            </div>:
+            <div>
+                <div class="container-fluid mobileGrid d-xl-none"> {/* For sceens smaller than "Large" */}
+                    <div class="container-fluid">
+                        <div class="card cardFrontPage">
+                            <div class="row"> {/* Logo Section */}
+                                <div class="mx-auto"><Link to="/"><img class="logoSmallerScreens container" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" /></Link></div>
+                            </div>
+                            <div class="row text-focus-in">
                                 <div class="container pb-2">
                                     <GamePageHeaderFont>
                                         {this.state.game.gameName}
                                     </GamePageHeaderFont>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row text-focus-in">
                                 <div class="col-sm-4 pb-2 tableColumn">
                                     <div class="container">
                                         <img src={this.state.game.gameImage} class="rounded gamePageThumbnail" />
@@ -195,7 +232,7 @@ export default class aladdinGameLink extends Component {
                                         </table>
                                     </div>
                                 </div> {/* Game data */}
-                                <div class="col-sm-4 pb-2"> {/* Game overview/description */}
+                                <div class="col-sm-4 pb-2 text-focus-in"> {/* Game overview/description */}
                                     <div class="container">
                                         <div class="row">
                                             <h3 class="gameDescriptionHeading mx-auto"><OverviewHeaderFont>{this.state.game.gameStoryTitle}</OverviewHeaderFont></h3>
@@ -205,7 +242,7 @@ export default class aladdinGameLink extends Component {
                                         </div>
                                     </div>
                                 </div> 
-                                <div class="col-sm-4 pb-2"> {/* Material image Grid */}
+                                <div class="col-sm-4 pb-2 text-focus-in"> {/* Material image Grid */}
                                     <div class="container-fluid">
                                         <div class="row">
                                             <div class="mx-auto">
@@ -241,7 +278,7 @@ export default class aladdinGameLink extends Component {
                                     </div>
                                 </div> 
                             </div>
-                            <div class="row"> {/* Footer Row */}
+                            <div class="row text-focus-in"> {/* Footer Row */}
                                 <div class="mx-auto">
                                     <h6 class="footerFont"><FooterFont>
                                         {this.state.game.giantBombFooter}
@@ -257,14 +294,14 @@ export default class aladdinGameLink extends Component {
                 <div class="container-fluid d-none d-xl-block"> {/* For larger Sceens */}
                     <img class="logoLargerScreens" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" width="300" />
                     <div class="card bg-transparent pt-2">
-                        <div class="row">
+                        <div class="row text-focus-in">
                             <div class="container">
                                 <GamePageHeaderFont>
                                     {this.state.game.gameName}
                                 </GamePageHeaderFont>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row text-focus-in">
                                 <div class="col-sm-4 pb-2">
                                     <div class="container">
                                         <img src={this.state.game.gameImage} class="rounded gamePageThumbnail" />
@@ -312,7 +349,7 @@ export default class aladdinGameLink extends Component {
                                         </table>
                                     </div>
                                 </div> {/* Game data */}
-                                <div class="col-sm-8 pb-2"> {/* Game overview/description */}
+                                <div class="col-sm-8 pb-2 text-focus-in"> {/* Game overview/description */}
                                     <div class="container">
                                         <div class="row">
                                             <h3 class="gameDescriptionHeading mx-auto"><OverviewHeaderFont>{this.state.game.gameStoryTitle}</OverviewHeaderFont></h3>
@@ -352,7 +389,7 @@ export default class aladdinGameLink extends Component {
                                     </div>
                                 </div> 
                         </div>
-                    <div class="row"> {/* Footer Row */}
+                    <div class="row text-focus-in"> {/* Footer Row */}
                         <div class="mx-auto">
                             <h6 class="footerFont"><FooterFont>
                                 {this.state.game.giantBombFooter}

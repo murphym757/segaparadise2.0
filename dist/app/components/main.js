@@ -13,6 +13,8 @@ var _axios = _interopRequireDefault(require("axios"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+var _reactEpicSpinners = require("react-epic-spinners");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
@@ -53,6 +55,14 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(MainSource).call(this, props));
 
     _this.componentDidMount = function (e) {
+      setTimeout(function () {
+        return _this.setState({
+          isLoading: false
+        });
+      }, 2018);
+    };
+
+    _this.componentWillMount = function (e) {
       _this.aladdinGameLink();
 
       _this.lionKingGameLink();
@@ -361,6 +371,7 @@ function (_Component) {
     };
 
     _this.state = {
+      isLoading: true,
       aladdin: {},
       lionKing: {},
       sonic1: {},
@@ -392,14 +403,59 @@ function (_Component) {
         componentId: "sc-1ucehs2-0"
       })(["  font-family:'Roboto-Black';"]);
 
-      return _react.default.createElement("div", null, _react.default.createElement("div", {
+      return this.state.isLoading ? _react.default.createElement("div", null, _react.default.createElement("div", {
         class: "container-fluid d-none d-xl-block"
       }, " ", _react.default.createElement("img", {
-        class: "logoLargerScreens",
+        class: "logoLargerScreens text-focus-in-home",
         src: "../src/app/assets/images/SegaParadise2Logo.svg",
         alt: "imageForGrid",
         width: "300"
       }), _react.default.createElement("div", {
+        class: "row"
+      }, _react.default.createElement("div", {
+        class: "mx-auto pt-5 pb-5"
+      }, _react.default.createElement(_reactEpicSpinners.AtomSpinner, {
+        color: "#f25ea4"
+      }))), _react.default.createElement("div", {
+        class: "row"
+      }, _react.default.createElement("div", {
+        class: "container-fluid"
+      }, _react.default.createElement("div", {
+        class: "grid"
+      })))), _react.default.createElement("div", {
+        class: "container-fluid mobileGrid d-xl-none"
+      }, " ", _react.default.createElement("div", {
+        class: "container-fluid"
+      }, _react.default.createElement("div", {
+        class: "card cardFrontPage"
+      }, _react.default.createElement("div", {
+        class: "row"
+      }, " ", _react.default.createElement("div", {
+        class: "mx-auto"
+      }, _react.default.createElement("img", {
+        class: "logoSmallerScreens container text-focus-in-home",
+        src: "../src/app/assets/images/SegaParadise2Logo.svg",
+        alt: "imageForGrid"
+      }))), _react.default.createElement("div", {
+        class: "row"
+      }, _react.default.createElement("div", {
+        class: "mx-auto pt-5 pb-5"
+      }, _react.default.createElement(_reactEpicSpinners.AtomSpinner, {
+        color: "#f25ea4"
+      }))))))) : _react.default.createElement("div", null, _react.default.createElement("div", {
+        class: "container-fluid d-none d-xl-block"
+      }, " ", _react.default.createElement(_reactRouterDom.Link, {
+        to: "/"
+      }, _react.default.createElement("img", {
+        class: "logoLargerScreens",
+        src: "../src/app/assets/images/SegaParadise2Logo.svg",
+        alt: "imageForGrid",
+        width: "300"
+      })), _react.default.createElement("div", {
+        class: "row text-focus-in"
+      }, _react.default.createElement("div", {
+        class: "mx-auto"
+      }, _react.default.createElement("div", {
         class: "row pt-2 pb-2"
       }, " ", _react.default.createElement("div", {
         class: "container"
@@ -466,14 +522,14 @@ function (_Component) {
       }), _react.default.createElement("img", {
         src: this.state.tmntHyperStoneHeist.gameImage,
         class: "rounded homepageThumbnail col-3"
-      }))), _react.default.createElement("div", {
+      }))))), _react.default.createElement("div", {
         class: "row"
       }, _react.default.createElement("div", {
         class: "container-fluid"
       }, _react.default.createElement("div", {
         class: "grid"
       }), _react.default.createElement("div", {
-        class: "mx-auto"
+        class: "mx-auto text-focus-in"
       }, _react.default.createElement(FooterFont, null, "Data provided courtesy of ", _react.default.createElement("img", {
         class: "spGBIcon",
         src: "../src/app/assets/images/segaParadise2GBLogo.png",
@@ -495,7 +551,7 @@ function (_Component) {
         src: "../src/app/assets/images/SegaParadise2Logo.svg",
         alt: "imageForGrid"
       }))), _react.default.createElement("div", {
-        class: "row"
+        class: "row text-focus-in"
       }, " ", _react.default.createElement("div", {
         class: "row pt-2 pb-2 mx-auto"
       }, " ", _react.default.createElement("div", {
@@ -611,7 +667,7 @@ function (_Component) {
       }))))), _react.default.createElement("div", {
         class: "row"
       }, " ", _react.default.createElement("div", {
-        class: "mx-auto"
+        class: "mx-auto text-focus-in"
       }, _react.default.createElement(FooterFont, null, "Data provided courtesy of ", _react.default.createElement("img", {
         class: "spGBIcon",
         src: "../src/app/assets/images/segaParadise2GBLogo.png",

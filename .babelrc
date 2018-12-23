@@ -6,6 +6,10 @@
             {
               "loose": true
             }
-          ],"babel-plugin-styled-components"
-    ]
+          ],
+          [
+            "babel-plugin-styled-components"
+          ]
+    ],
+    "compact": false,
 }
