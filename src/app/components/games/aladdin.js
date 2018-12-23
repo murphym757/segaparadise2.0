@@ -276,7 +276,7 @@ export default class aladdinGameLink extends Component {
                             <div class="row text-focus-in"> {/* Footer Row */}
                                 <div class="mx-auto">
                                     <FooterFont>
-                                        Data provided courtesy of <a href={this.state.game.giantBombLink} target="_blank"><img class="spGBIcon" src="../src/app/assets/images/SegaParadise2GBLogo.png" alt="siteLogoIcon" height="42" width="42" /></a> 
+                                        Data provided courtesy of <a href={this.state.game.giantBombLink} target="_blank"><img class="spGBIcon" src="../src/app/assets/images/SegaParadise2GBLogo.svg" alt="siteLogoIcon" height="42" width="42" /></a> 
                                     </FooterFont>
                                 </div>
                             </div>
@@ -384,7 +384,7 @@ export default class aladdinGameLink extends Component {
                     <div class="row text-focus-in"> {/* Footer Row */}
                         <div class="mx-auto">
                             <FooterFont>
-                                Data provided courtesy of <a href={this.state.game.giantBombLink} target="_blank"><img class="spGBIcon" src="../src/app/assets/images/SegaParadise2GBLogo.png" alt="siteLogoIcon" height="42" width="42" /></a> 
+                                Data provided courtesy of <a href={this.state.game.giantBombLink} target="_blank"><img class="spGBIcon" src="../src/app/assets/images/SegaParadise2GBLogo.svg" alt="siteLogoIcon" height="42" width="42" /></a> 
                             </FooterFont>
                         </div>
                     </div>
