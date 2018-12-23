@@ -458,7 +458,7 @@ export default class MainSource extends Component {
                             <div class="row"> {/* Source Section */}
                                 <div class="mx-auto text-focus-in">
                                     <FooterFont>
-                                        Data provided courtesy of <img class="spGBIcon" src="../src/app/assets/images/segaParadise2GBLogo.png" alt="siteLogoIcon" height="42" width="42" /> 
+                                        Data provided courtesy of <img class="spGBIcon" src="../src/app/assets/images/SegaParadise2GBLogo.png" alt="siteLogoIcon" height="42" width="42" /> 
                                     </FooterFont>
                                 </div>
                             </div> 
