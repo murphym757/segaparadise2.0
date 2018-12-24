@@ -28,17 +28,17 @@ var _sonic = _interopRequireDefault(require("./app/components/games/sonic1.js"))
 
 var _streetsOfRage = _interopRequireDefault(require("./app/components/games/streetsOfRage2.js"));
 
+var _sonic2 = _interopRequireDefault(require("./app/components/games/sonic2.js"));
+
+var _mortalKombat = _interopRequireDefault(require("./app/components/games/mortalKombat.js"));
+
+var _pocahontas = _interopRequireDefault(require("./app/components/games/pocahontas.js"));
+
+var _mjMoonwalker = _interopRequireDefault(require("./app/components/games/mjMoonwalker.js"));
+
+var _sonicNKnuckles = _interopRequireDefault(require("./app/components/games/sonicNKnuckles.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/* import sonic2GamePage from './app/components/games/sonic2.js';*/
-
-/* import mortalKombatGamePage from './app/components/games/mortalKombat.js';*/
-
-/* import pocahontasGamePage from './app/components/games/pocahontas.js';*/
-
-/* import mjMoonwalkerGamePage from './app/components/games/mjMoonwalker.js';*/
-
-/* import sonicNKnucklesGamePage from './app/components/games/sonicNKnuckles.js';*/
 
 /* import toejamNEarlGamePage from './app/components/games/toejamNEarl.js';*/
 
@@ -73,4 +73,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   exact: true,
   path: "/games/4",
   component: _streetsOfRage.default
+}), _react.default.createElement(_reactRouterDom.Route, {
+  exact: true,
+  path: "/games/5",
+  component: _sonic2.default
+}), _react.default.createElement(_reactRouterDom.Route, {
+  exact: true,
+  path: "/games/6",
+  component: _mortalKombat.default
+}), _react.default.createElement(_reactRouterDom.Route, {
+  exact: true,
+  path: "/games/7",
+  component: _pocahontas.default
+}), _react.default.createElement(_reactRouterDom.Route, {
+  exact: true,
+  path: "/games/8",
+  component: _mjMoonwalker.default
+}), _react.default.createElement(_reactRouterDom.Route, {
+  exact: true,
+  path: "/games/9",
+  component: _sonicNKnuckles.default
 }))), document.getElementById("app"));

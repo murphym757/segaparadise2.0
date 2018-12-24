@@ -83,7 +83,6 @@ img {
 }
 // Game Page Font Sizes
 //--------------------//
-//Aladdin
 h1 { // Game Title
     font-family: Roboto-Black;
 }
@@ -92,7 +91,8 @@ strong { //Strong (or Row Header)
     font-size: 0.6em;
 }
 
-h6 { // Row Content
+h6,
+.ratingRow { // Row Content
     font-size: 0.5em;
     font-family: Roboto-Medium;
 }
@@ -514,7 +514,8 @@ p::first-letter { // Overview Body
         font-size: 2em;
     }
 
-    h6 { //Row Content
+    h6,
+    .ratingRow { //Row Content
         font-size: 1.5em;
     }
 

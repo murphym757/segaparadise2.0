@@ -13,11 +13,11 @@ import aladdinGamePage from './app/components/games/aladdin.js';
 import lionKingGamePage from './app/components/games/lionKing.js';
 import sonic1GamePage from './app/components/games/sonic1.js';
 import streetsOfRage2GamePage from './app/components/games/streetsOfRage2.js';
-/* import sonic2GamePage from './app/components/games/sonic2.js';*/
-/* import mortalKombatGamePage from './app/components/games/mortalKombat.js';*/
-/* import pocahontasGamePage from './app/components/games/pocahontas.js';*/
-/* import mjMoonwalkerGamePage from './app/components/games/mjMoonwalker.js';*/
-/* import sonicNKnucklesGamePage from './app/components/games/sonicNKnuckles.js';*/
+import sonic2GamePage from './app/components/games/sonic2.js';
+import mortalKombatGamePage from './app/components/games/mortalKombat.js';
+import pocahontasGamePage from './app/components/games/pocahontas.js';
+import mjMoonwalkerGamePage from './app/components/games/mjMoonwalker.js';
+import sonicNKnucklesGamePage from './app/components/games/sonicNKnuckles.js';
 /* import toejamNEarlGamePage from './app/components/games/toejamNEarl.js';*/
 /* import kidChameleonGamePage from './app/components/games/kidChameleon.js';*/
 /* import ecco1GamePage from './app/components/games/ecco1.js';*/
@@ -35,11 +35,11 @@ render(
             <Route exact path="/games/2" component={lionKingGamePage} />
             <Route exact path="/games/3" component={sonic1GamePage} />
             <Route exact path="/games/4" component={streetsOfRage2GamePage} />
-            {/*<Route exact path="/games/5" component={sonic2GamePage} />*/}
-            {/*<Route exact path="/games/6" component={mortalKombatGamePage} />*/}
-            {/*<Route exact path="/games/7" component={pocahontasGamePage} />*/}
-            {/*<Route exact path="/games/8" component={mjMoonwalkerGamePage} />*/}
-            {/*<Route exact path="/games/9" component={sonicNKnucklesGamePage} />*/}
+            <Route exact path="/games/5" component={sonic2GamePage} />
+            <Route exact path="/games/6" component={mortalKombatGamePage} />
+            <Route exact path="/games/7" component={pocahontasGamePage} />
+            <Route exact path="/games/8" component={mjMoonwalkerGamePage} />
+            <Route exact path="/games/9" component={sonicNKnucklesGamePage} />
             {/*<Route exact path="/games/10" component={toejamNEarlGamePage} />*/}
             {/*<Route exact path="/games/11" component={kidChameleonGamePage} />*/}
             {/*<Route exact path="/games/12" component={ecco1GamePage} />*/}
