@@ -9,8 +9,8 @@ const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 const segaGameUrl = "https://www.giantbomb.com/api/game/";
 const GiantBombAPI = "/?api_key=7198a87d91743e61f8b82c5a59d616542c2e4a1b";
 const dataFormat = "&format=json";
-const gameGUID = "3030-19944"; //Aladdin
-export default class aladdinGamePage extends Component {
+const gameGUID = "3030-9716"; //tinyToons
+export default class tinyToonsGamePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -27,49 +27,40 @@ export default class aladdinGamePage extends Component {
         this.gameData();
     }
     gameData = (e) => {
-        const gameDescription = "";
+        const gameDescription = "Buster's Hidden Treasure is based on the widely popular cartoon show; Tiny Toon Adventures, created by Steven Speilberg. The game  is an action platformer where you play as Buster Bunny and try to defeat Montana Max and stop his plan to enslave his friends and getting away with stealing a large amount of treasure. Buster's quest takes him to a large variety of levels, including a forests, caves, factories, volcanoes, and snow covered mountains, He fights quite a large variety of enemies along the way including  Rats, Bats, bears and other cartoon beasts. Bosses usually take the form of one of Buster's many friends who have been brainwashed to fight against him.";
         const esrbRatingIconE = <img class="esrbRatingIcon" src="../src/app/assets/images/ratingIcons/esrb_e.png" alt="ratingIcon" height="42" width="42" />;
         const esrbRatingIconT = <img class="esrbRatingIcon" src="../src/app/assets/images/ratingIcons/esrb_t.png" alt="ratingIcon" height="42" width="42" />;
         const esrbRatingIconM = <img class="esrbRatingIcon" src="../src/app/assets/images/ratingIcons/esrb_m.png" alt="ratingIcon" height="42" width="42" />;
         //Images
-        const image1 = <img class="gridImage" src="" alt="imageForGrid" height="100" Width="100" />;
-        const image2 = <img class="gridImage" src="" alt="imageForGrid" height="100" Width="100" />;
-        const image3 = <img class="gridImage" src="" alt="imageForGrid" height="100" Width="100" />;
-        const image4 = <img class="gridImage" src="" alt="imageForGrid" height="100" Width="100" />;
-        const image5 = <img class="gridImage" src="" alt="imageForGrid" height="100" Width="100" />;
-        const image6 = <img class="gridImage" src="" alt="imageForGrid" height="100" Width="100" />;
-        const image7 = <img class="gridImage" src="" alt="imageForGrid" height="100" Width="100" />;
-        const modalImage1 = <img class="modalImage" src="" alt="imageForModal"/>;
-        const modalImage2 = <img class="modalImage" src="" alt="imageForModal"/>;
-        const modalImage3 = <img class="modalImage" src="" alt="imageForModal"/>;
-        const modalImage4 = <img class="modalImage" src="" alt="imageForModal"/>;
-        const modalImage5 = <img class="modalImage" src="" alt="imageForModal"/>;
-        const modalImage6 = <img class="modalImage" src="" alt="imageForModal"/>;
-        const modalImage7 = <img class="modalImage" src="" alt="imageForModal"/>;
+        const image1 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/2628/420547-tiny_20toon_20adventures_000_1rl.jpg" alt="imageForGrid" height="100" Width="100" />;
+        const image2 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/11/110964/2290546-secret.jpeg" alt="imageForGrid" height="100" Width="100" />;
+        const image3 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/11/110964/2290545-levelend.gif" alt="imageForGrid" height="100" Width="100" />;
+        const image4 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/11/110964/2290547-sunset.gif" alt="imageForGrid" height="100" Width="100" />;
+        const image5 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/2628/420423-1231.png" alt="imageForGrid" height="100" Width="100" />;
+        const image6 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/11/110964/2290544-bossdizzy.gif" alt="imageForGrid" height="100" Width="100" />;
+        const image7 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/11/110964/2290548-worldmpa.png" alt="imageForGrid" height="100" Width="100" />;
+        const modalImage1 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/2628/420547-tiny_20toon_20adventures_000_1rl.jpg" alt="imageForModal"/>;
+        const modalImage2 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/11/110964/2290546-secret.jpeg" alt="imageForModal"/>;
+        const modalImage3 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/11/110964/2290545-levelend.gif" alt="imageForModal"/>;
+        const modalImage4 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/11/110964/2290547-sunset.gif" alt="imageForModal"/>;
+        const modalImage5 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/2628/420423-1231.png" alt="imageForModal"/>;
+        const modalImage6 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/11/110964/2290544-bossdizzy.gif" alt="imageForModal"/>;
+        const modalImage7 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/11/110964/2290548-worldmpa.png" alt="imageForModal"/>;
         axios.get(proxyUrl + segaGameUrl + gameGUID + GiantBombAPI + dataFormat)
         .then(res => {
-            let gameESRBRating = res.data.results.original_game_rating[0].id;
-            if(gameESRBRating === 6)
-                this.setState({gameRating: esrbRatingIconE})
-            else if(gameESRBRating === 1)
-                this.setState({gameRating: esrbRatingIconT})
-            else if(gameESRBRating === 16)
-                this.setState({gameRating: esrbRatingIconM})
+            this.setState({gameRating: "N/A"})
             this.setState({
                 game: {
                     gameName: res.data.results.name,
-                    gameImage: res.data.results.images[4].super_url,
+                    gameImage: res.data.results.images[0].super_url,
                     gameStory: gameDescription,
                     gameStoryTitle: "Overview",
                     //Developer Data
-                    gameDeveloper1: res.data.results.developers[1].name,
-                    gameDeveloper2: res.data.results.developers[2].name,
-                    gameDeveloper3: res.data.results.developers[3].name,
+                    gameDeveloper1: res.data.results.developers[0].name,
                     gameDeveloperSectionHeader: "Developer:",
                     //Genre Data
                     gameGenre1: res.data.results.genres[0].name,
                     gameGenre2: res.data.results.genres[1].name,
-                    gameGenre3: res.data.results.genres[2].name,
                     gameGenreSectionHeader: "Genre:",
                     //Release Data
                     releaseDate: <Moment format="MMMM Do, YYYY">{res.data.results.original_release_date}</Moment>,
@@ -94,7 +85,7 @@ export default class aladdinGamePage extends Component {
                     gameModalImage6: modalImage6,
                     gameModalImage7: modalImage7,
                     // Link to source material
-                    giantBombLink: "https://www.giantbomb.com/disneys-aladdin/" + gameGUID + "/"
+                    giantBombLink: "https://www.giantbomb.com/tiny-toon-adventures-busters-hidden-treasure/" + gameGUID + "/"
 
                 },
 

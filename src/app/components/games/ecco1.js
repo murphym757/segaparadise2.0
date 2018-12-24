@@ -9,8 +9,8 @@ const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 const segaGameUrl = "https://www.giantbomb.com/api/game/";
 const GiantBombAPI = "/?api_key=7198a87d91743e61f8b82c5a59d616542c2e4a1b";
 const dataFormat = "&format=json";
-const gameGUID = "3030-13306"; //toejamNEarl
-export default class toejamNEarlGamePage extends Component {
+const gameGUID = "3030-9286"; //ecco1
+export default class ecco1GamePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -27,36 +27,43 @@ export default class toejamNEarlGamePage extends Component {
         this.gameData();
     }
     gameData = (e) => {
-        const gameDescription = "The game stars two bodaciously funky alien rappers (three-legged red ToeJam and fat orange Earl) as they explore various floating islands (representing Earth) in order to find pieces of their wrecked spacecraft. The entire game revolves around collecting presents, gathering ship pieces, and fighting or avoiding enemies. In this surreal world, Earth consists of hundreds of suspended grass platforms in space, sometimes containing water or sand. The levels are scattered with Earthlings, who, without an offensive weapon at the aliens' disposal, must be avoided at any cost.";
+        const gameDescription = "Players control a bottlenose dolphin named Ecco (unique to other dolphins for the six star markings on his forehead) as he embarks on a journey through the oceans, trying to figure out the whereabouts of his group (who were sucked up in a mysterious waterspout) while helping fellow dolphins along the way.";
         const esrbRatingIconE = <img class="esrbRatingIcon" src="../src/app/assets/images/ratingIcons/esrb_e.png" alt="ratingIcon" height="42" width="42" />;
         const esrbRatingIconT = <img class="esrbRatingIcon" src="../src/app/assets/images/ratingIcons/esrb_t.png" alt="ratingIcon" height="42" width="42" />;
         const esrbRatingIconM = <img class="esrbRatingIcon" src="../src/app/assets/images/ratingIcons/esrb_m.png" alt="ratingIcon" height="42" width="42" />;
         //Images
-        const image1 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/4231/251450-toejam_and_earl.gif" alt="imageForGrid" height="100" Width="100" />;
-        const image2 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/1/10283/217799-tje7.gif" alt="imageForGrid" height="100" Width="100" />;
-        const image3 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/4231/251453-toejamandearl.jpg" alt="imageForGrid" height="100" Width="100" />;
-        const image4 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/7/74316/2371191-toejam3.jpg" alt="imageForGrid" height="100" Width="100" />;
-        const image5 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/4231/251443-tjande.jpg" alt="imageForGrid" height="100" Width="100" />;
-        const image6 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/1/10283/217802-toejam_and_earl.png" alt="imageForGrid" height="100" Width="100" />;
-        const image7 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/6036/206701-tje6.gif" alt="imageForGrid" height="100" Width="100" />;
-        const modalImage1 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/4231/251450-toejam_and_earl.gif" alt="imageForModal"/>;
-        const modalImage2 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/1/10283/217799-tje7.gif" alt="imageForModal"/>;
-        const modalImage3 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/4231/251453-toejamandearl.jpg" alt="imageForModal"/>;
-        const modalImage4 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/7/74316/2371191-toejam3.jpg" alt="imageForModal"/>;
-        const modalImage5 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/4231/251443-tjande.jpg" alt="imageForModal"/>;
-        const modalImage6 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/1/10283/217802-toejam_and_earl.png" alt="imageForModal"/>;
-        const modalImage7 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/6036/206701-tje6.gif" alt="imageForModal"/>;
+        const image1 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/6384/456231-ecco_gen_screenshot1.jpg.gif" alt="imageForGrid" height="100" Width="100" />;
+        const image2 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/6384/456246-revieweccothedolphin_6.jpg" alt="imageForGrid" height="100" Width="100" />;
+        const image3 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/6384/456233-ecco_gen_screenshot3.jpg.gif" alt="imageForGrid" height="100" Width="100" />;
+        const image4 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/6384/456234-ecco_gen_screenshot4.jpg.gif" alt="imageForGrid" height="100" Width="100" />;
+        const image5 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/2/23093/2763964-eccothedolphin001.png" alt="imageForGrid" height="100" Width="100" />;
+        const image6 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/8480/246398-ecco201.jpg" alt="imageForGrid" height="100" Width="100" />;
+        const image7 = <img class="gridImage" src="https://static.giantbomb.com/uploads/original/0/8480/246400-ecco1.png" alt="imageForGrid" height="100" Width="100" />;
+        const modalImage1 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/6384/456231-ecco_gen_screenshot1.jpg.gif" alt="imageForModal"/>;
+        const modalImage2 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/6384/456246-revieweccothedolphin_6.jpg" alt="imageForModal"/>;
+        const modalImage3 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/6384/456233-ecco_gen_screenshot3.jpg.gif" alt="imageForModal"/>;
+        const modalImage4 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/6384/456234-ecco_gen_screenshot4.jpg.gif" alt="imageForModal"/>;
+        const modalImage5 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/2/23093/2763964-eccothedolphin001.png" alt="imageForModal"/>;
+        const modalImage6 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/8480/246398-ecco201.jpg" alt="imageForModal"/>;
+        const modalImage7 = <img class="modalImage" src="https://static.giantbomb.com/uploads/original/0/8480/246400-ecco1.png" alt="imageForModal"/>;
         axios.get(proxyUrl + segaGameUrl + gameGUID + GiantBombAPI + dataFormat)
         .then(res => {
-            this.setState({gameRating: "N/A"})
+            let gameESRBRating = res.data.results.original_game_rating[0].id;
+            if(gameESRBRating === 6)
+                this.setState({gameRating: esrbRatingIconE})
+            else if(gameESRBRating === 1)
+                this.setState({gameRating: esrbRatingIconT})
+            else if(gameESRBRating === 16)
+                this.setState({gameRating: esrbRatingIconM})
             this.setState({
                 game: {
                     gameName: res.data.results.name,
-                    gameImage: res.data.results.images[7].super_url,
+                    gameImage: res.data.results.images[3].super_url,
                     gameStory: gameDescription,
                     gameStoryTitle: "Overview",
                     //Developer Data
                     gameDeveloper1: res.data.results.developers[0].name,
+                    gameDeveloper2: res.data.results.developers[1].name,
                     gameDeveloperSectionHeader: "Developer:",
                     //Genre Data
                     gameGenre1: res.data.results.genres[0].name,
@@ -84,7 +91,7 @@ export default class toejamNEarlGamePage extends Component {
                     gameModalImage6: modalImage6,
                     gameModalImage7: modalImage7,
                     // Link to source material
-                    giantBombLink: "https://www.giantbomb.com/toejam-and-earl/" + gameGUID + "/"
+                    giantBombLink: "https://www.giantbomb.com/ecco-the-dolphin/" + gameGUID + "/"
 
                 },
 

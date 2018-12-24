@@ -43,19 +43,19 @@ var proxyUrl = "https://cors-anywhere.herokuapp.com/";
 var segaGameUrl = "https://www.giantbomb.com/api/game/";
 var GiantBombAPI = "/?api_key=7198a87d91743e61f8b82c5a59d616542c2e4a1b";
 var dataFormat = "&format=json";
-var gameGUID = "3030-19944"; //Aladdin
+var gameGUID = "3030-1096"; //streetFighter2
 
-var aladdinGamePage =
+var streetFighter2GamePage =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(aladdinGamePage, _Component);
+  _inherits(streetFighter2GamePage, _Component);
 
-  function aladdinGamePage(props) {
+  function streetFighter2GamePage(props) {
     var _this;
 
-    _classCallCheck(this, aladdinGamePage);
+    _classCallCheck(this, streetFighter2GamePage);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(aladdinGamePage).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(streetFighter2GamePage).call(this, props));
 
     _this.componentDidMount = function (e) {
       setTimeout(function () {
@@ -70,7 +70,7 @@ function (_Component) {
     };
 
     _this.gameData = function (e) {
-      var gameDescription = "";
+      var gameDescription = "The first derivative (hence the \"dash\" in the title) of Street Fighter II: The World Warriors, Street Fighter II': Champion Edition tweaked various gameplay elements (changing the speed, damage, priority, and other characteristics of normal and special moves) while allowing players to pick the same character (each player character sporting a different color scheme) and making the four boss characters (Balrog, Vega, Sagat, and M. Bison) playable.";
 
       var esrbRatingIconE = _react.default.createElement("img", {
         class: "esrbRatingIcon",
@@ -99,7 +99,7 @@ function (_Component) {
 
       var image1 = _react.default.createElement("img", {
         class: "gridImage",
-        src: "",
+        src: "https://static.giantbomb.com/uploads/original/2/23093/2722457-3882864292-6TFdQ.png",
         alt: "imageForGrid",
         height: "100",
         Width: "100"
@@ -107,7 +107,7 @@ function (_Component) {
 
       var image2 = _react.default.createElement("img", {
         class: "gridImage",
-        src: "",
+        src: "https://static.giantbomb.com/uploads/original/2/23093/2722458-6311784432-K7r3h.png",
         alt: "imageForGrid",
         height: "100",
         Width: "100"
@@ -115,7 +115,7 @@ function (_Component) {
 
       var image3 = _react.default.createElement("img", {
         class: "gridImage",
-        src: "",
+        src: "https://static.giantbomb.com/uploads/original/2/23093/2723132-2201888471-MJ60H.png",
         alt: "imageForGrid",
         height: "100",
         Width: "100"
@@ -123,7 +123,7 @@ function (_Component) {
 
       var image4 = _react.default.createElement("img", {
         class: "gridImage",
-        src: "",
+        src: "https://static.giantbomb.com/uploads/original/0/8125/288201-street_fighter_2_special_champion_edition005.jpg",
         alt: "imageForGrid",
         height: "100",
         Width: "100"
@@ -131,7 +131,7 @@ function (_Component) {
 
       var image5 = _react.default.createElement("img", {
         class: "gridImage",
-        src: "",
+        src: "https://static.giantbomb.com/uploads/original/0/8125/288184-street_fighter_2_special_champion_edition000.jpg",
         alt: "imageForGrid",
         height: "100",
         Width: "100"
@@ -139,7 +139,7 @@ function (_Component) {
 
       var image6 = _react.default.createElement("img", {
         class: "gridImage",
-        src: "",
+        src: "https://static.giantbomb.com/uploads/original/0/8125/288188-street_fighter_2_special_champion_edition002.jpg",
         alt: "imageForGrid",
         height: "100",
         Width: "100"
@@ -147,7 +147,7 @@ function (_Component) {
 
       var image7 = _react.default.createElement("img", {
         class: "gridImage",
-        src: "",
+        src: "https://static.giantbomb.com/uploads/original/0/8125/381564-street_fighter_2_special_champion_edition___guild_bio.jpg",
         alt: "imageForGrid",
         height: "100",
         Width: "100"
@@ -155,43 +155,43 @@ function (_Component) {
 
       var modalImage1 = _react.default.createElement("img", {
         class: "modalImage",
-        src: "",
+        src: "https://static.giantbomb.com/uploads/original/2/23093/2722457-3882864292-6TFdQ.png",
         alt: "imageForModal"
       });
 
       var modalImage2 = _react.default.createElement("img", {
         class: "modalImage",
-        src: "",
+        src: "https://static.giantbomb.com/uploads/original/2/23093/2722458-6311784432-K7r3h.png",
         alt: "imageForModal"
       });
 
       var modalImage3 = _react.default.createElement("img", {
         class: "modalImage",
-        src: "",
+        src: "https://static.giantbomb.com/uploads/original/2/23093/2723132-2201888471-MJ60H.png",
         alt: "imageForModal"
       });
 
       var modalImage4 = _react.default.createElement("img", {
         class: "modalImage",
-        src: "",
+        src: "https://static.giantbomb.com/uploads/original/0/8125/288201-street_fighter_2_special_champion_edition005.jpg",
         alt: "imageForModal"
       });
 
       var modalImage5 = _react.default.createElement("img", {
         class: "modalImage",
-        src: "",
+        src: "https://static.giantbomb.com/uploads/original/0/8125/288184-street_fighter_2_special_champion_edition000.jpg",
         alt: "imageForModal"
       });
 
       var modalImage6 = _react.default.createElement("img", {
         class: "modalImage",
-        src: "",
+        src: "https://static.giantbomb.com/uploads/original/0/8125/288188-street_fighter_2_special_champion_edition002.jpg",
         alt: "imageForModal"
       });
 
       var modalImage7 = _react.default.createElement("img", {
         class: "modalImage",
-        src: "",
+        src: "https://static.giantbomb.com/uploads/original/0/8125/381564-street_fighter_2_special_champion_edition___guild_bio.jpg",
         alt: "imageForModal"
       });
 
@@ -208,18 +208,14 @@ function (_Component) {
         _this.setState({
           game: {
             gameName: res.data.results.name,
-            gameImage: res.data.results.images[4].super_url,
+            gameImage: res.data.results.images[8].super_url,
             gameStory: gameDescription,
             gameStoryTitle: "Overview",
             //Developer Data
-            gameDeveloper1: res.data.results.developers[1].name,
-            gameDeveloper2: res.data.results.developers[2].name,
-            gameDeveloper3: res.data.results.developers[3].name,
+            gameDeveloper1: res.data.results.developers[0].name,
             gameDeveloperSectionHeader: "Developer:",
             //Genre Data
             gameGenre1: res.data.results.genres[0].name,
-            gameGenre2: res.data.results.genres[1].name,
-            gameGenre3: res.data.results.genres[2].name,
             gameGenreSectionHeader: "Genre:",
             //Release Data
             releaseDate: _react.default.createElement(_reactMoment.default, {
@@ -246,7 +242,7 @@ function (_Component) {
             gameModalImage6: modalImage6,
             gameModalImage7: modalImage7,
             // Link to source material
-            giantBombLink: "https://www.giantbomb.com/disneys-aladdin/" + gameGUID + "/"
+            giantBombLink: "https://www.giantbomb.com/street-fighter-ii-champion-edition/" + gameGUID + "/"
           }
         });
 
@@ -265,38 +261,38 @@ function (_Component) {
     return _this;
   }
 
-  _createClass(aladdinGamePage, [{
+  _createClass(streetFighter2GamePage, [{
     key: "render",
     value: function render() {
       // Styled Components
       var GamePageHeaderFont = _styledComponents.default.h1.withConfig({
-        displayName: "template__GamePageHeaderFont",
-        componentId: "sc-14wnj0j-0"
+        displayName: "streetFighter2__GamePageHeaderFont",
+        componentId: "sc-1cyffbd-0"
       })(["  color:black;-webkit-text-stroke:1px #f25ea4;text-shadow:0 0 4px #f25ea4;font-family:'Roboto-Black';"]);
 
       var OverviewHeaderFont = _styledComponents.default.h3.withConfig({
-        displayName: "template__OverviewHeaderFont",
-        componentId: "sc-14wnj0j-1"
+        displayName: "streetFighter2__OverviewHeaderFont",
+        componentId: "sc-1cyffbd-1"
       })(["  color:#70bac9;font-family:'Roboto-Thin';"]);
 
       var OverviewBodyFont = _styledComponents.default.p.withConfig({
-        displayName: "template__OverviewBodyFont",
-        componentId: "sc-14wnj0j-2"
+        displayName: "streetFighter2__OverviewBodyFont",
+        componentId: "sc-1cyffbd-2"
       })(["  font-family:'Roboto-Thin';"]);
 
       var FooterFont = _styledComponents.default.h6.withConfig({
-        displayName: "template__FooterFont",
-        componentId: "sc-14wnj0j-3"
+        displayName: "streetFighter2__FooterFont",
+        componentId: "sc-1cyffbd-3"
       })(["  font-family:'Roboto-Black';"]);
 
       var RowHeaderFont = _styledComponents.default.strong.withConfig({
-        displayName: "template__RowHeaderFont",
-        componentId: "sc-14wnj0j-4"
+        displayName: "streetFighter2__RowHeaderFont",
+        componentId: "sc-1cyffbd-4"
       })(["font-family:'Roboto-Medium';color:#f25ea4;"]);
 
       var RowContentFont = _styledComponents.default.h6.withConfig({
-        displayName: "template__RowContentFont",
-        componentId: "sc-14wnj0j-5"
+        displayName: "streetFighter2__RowContentFont",
+        componentId: "sc-1cyffbd-5"
       })(["font-family:'Roboto-Medium';"]);
 
       return this.state.isLoading ? _react.default.createElement("div", null, _react.default.createElement("div", {
@@ -772,7 +768,7 @@ function (_Component) {
     }
   }]);
 
-  return aladdinGamePage;
+  return streetFighter2GamePage;
 }(_react.Component);
 
-exports.default = aladdinGamePage;
+exports.default = streetFighter2GamePage;

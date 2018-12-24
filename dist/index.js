@@ -38,21 +38,22 @@ var _mjMoonwalker = _interopRequireDefault(require("./app/components/games/mjMoo
 
 var _sonicNKnuckles = _interopRequireDefault(require("./app/components/games/sonicNKnuckles.js"));
 
+var _toejamNEarl = _interopRequireDefault(require("./app/components/games/toejamNEarl.js"));
+
+var _kidChameleon = _interopRequireDefault(require("./app/components/games/kidChameleon.js"));
+
+var _ecco = _interopRequireDefault(require("./app/components/games/ecco1.js"));
+
+var _castleMickey = _interopRequireDefault(require("./app/components/games/castleMickey.js"));
+
+var _streetFighter = _interopRequireDefault(require("./app/components/games/streetFighter2.js"));
+
+var _tinyToons = _interopRequireDefault(require("./app/components/games/tinyToons.js"));
+
+var _tmntHyperStoneHeist = _interopRequireDefault(require("./app/components/games/tmntHyperStoneHeist.js"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* import toejamNEarlGamePage from './app/components/games/toejamNEarl.js';*/
-
-/* import kidChameleonGamePage from './app/components/games/kidChameleon.js';*/
-
-/* import ecco1GamePage from './app/components/games/ecco1.js';*/
-
-/* import castleMickeyGamePage from './app/components/games/castleMickey.js';*/
-
-/* import streetFighter2GamePage from './app/components/games/streetFighter2.js';*/
-
-/* import tinyToonsGamePage from './app/components/games/tinyToons.js';*/
-
-/* import tmntHyperStoneHeistGamePage from './app/components/games/tmntHyperStoneHeist.js';*/
 (0, _reactDom.render)(_react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Route, {
   exact: true,
   path: "/",
@@ -93,4 +94,32 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   exact: true,
   path: "/games/9",
   component: _sonicNKnuckles.default
+}), _react.default.createElement(_reactRouterDom.Route, {
+  exact: true,
+  path: "/games/10",
+  component: _toejamNEarl.default
+}), _react.default.createElement(_reactRouterDom.Route, {
+  exact: true,
+  path: "/games/11",
+  component: _kidChameleon.default
+}), _react.default.createElement(_reactRouterDom.Route, {
+  exact: true,
+  path: "/games/12",
+  component: _ecco.default
+}), _react.default.createElement(_reactRouterDom.Route, {
+  exact: true,
+  path: "/games/13",
+  component: _castleMickey.default
+}), _react.default.createElement(_reactRouterDom.Route, {
+  exact: true,
+  path: "/games/14",
+  component: _streetFighter.default
+}), _react.default.createElement(_reactRouterDom.Route, {
+  exact: true,
+  path: "/games/15",
+  component: _tinyToons.default
+}), _react.default.createElement(_reactRouterDom.Route, {
+  exact: true,
+  path: "/games/16",
+  component: _tmntHyperStoneHeist.default
 }))), document.getElementById("app"));

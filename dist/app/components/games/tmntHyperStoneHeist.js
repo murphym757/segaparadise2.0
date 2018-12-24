@@ -43,19 +43,19 @@ var proxyUrl = "https://cors-anywhere.herokuapp.com/";
 var segaGameUrl = "https://www.giantbomb.com/api/game/";
 var GiantBombAPI = "/?api_key=7198a87d91743e61f8b82c5a59d616542c2e4a1b";
 var dataFormat = "&format=json";
-var gameGUID = "3030-13306"; //toejamNEarl
+var gameGUID = "3030-11404"; //tmntHyperStoneHeist
 
-var toejamNEarlGamePage =
+var tmntHyperStoneHeistGamePage =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(toejamNEarlGamePage, _Component);
+  _inherits(tmntHyperStoneHeistGamePage, _Component);
 
-  function toejamNEarlGamePage(props) {
+  function tmntHyperStoneHeistGamePage(props) {
     var _this;
 
-    _classCallCheck(this, toejamNEarlGamePage);
+    _classCallCheck(this, tmntHyperStoneHeistGamePage);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(toejamNEarlGamePage).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(tmntHyperStoneHeistGamePage).call(this, props));
 
     _this.componentDidMount = function (e) {
       setTimeout(function () {
@@ -70,7 +70,7 @@ function (_Component) {
     };
 
     _this.gameData = function (e) {
-      var gameDescription = "The game stars two bodaciously funky alien rappers (three-legged red ToeJam and fat orange Earl) as they explore various floating islands (representing Earth) in order to find pieces of their wrecked spacecraft. The entire game revolves around collecting presents, gathering ship pieces, and fighting or avoiding enemies. In this surreal world, Earth consists of hundreds of suspended grass platforms in space, sometimes containing water or sand. The levels are scattered with Earthlings, who, without an offensive weapon at the aliens' disposal, must be avoided at any cost.";
+      var gameDescription = "Shredder is back, and this time he has stolen not only the Statue of Liberty, but Manhattan itself! Shredder and the Foot Clan fight to retain the borough of New York through five levels of action. The game featured all four of the Teenage Mutant Ninja Turtles ( Leonardo, Michelangelo, Raphael, and Donatello) taking on various villains (and a ton of Foot Soldiers) throughout the levels of the game. The villains included Leatherhead, Tatsu, Rocksteady, Stockman, Krang, and Shredder.";
 
       var esrbRatingIconE = _react.default.createElement("img", {
         class: "esrbRatingIcon",
@@ -99,7 +99,7 @@ function (_Component) {
 
       var image1 = _react.default.createElement("img", {
         class: "gridImage",
-        src: "https://static.giantbomb.com/uploads/original/0/4231/251450-toejam_and_earl.gif",
+        src: "https://static.giantbomb.com/uploads/original/0/1425/445283-tt.jpg",
         alt: "imageForGrid",
         height: "100",
         Width: "100"
@@ -107,7 +107,7 @@ function (_Component) {
 
       var image2 = _react.default.createElement("img", {
         class: "gridImage",
-        src: "https://static.giantbomb.com/uploads/original/1/10283/217799-tje7.gif",
+        src: "https://static.giantbomb.com/uploads/original/0/1425/445284-tt__1_.jpg",
         alt: "imageForGrid",
         height: "100",
         Width: "100"
@@ -115,7 +115,7 @@ function (_Component) {
 
       var image3 = _react.default.createElement("img", {
         class: "gridImage",
-        src: "https://static.giantbomb.com/uploads/original/0/4231/251453-toejamandearl.jpg",
+        src: "https://static.giantbomb.com/uploads/original/0/1425/445325-tt__27_.jpg",
         alt: "imageForGrid",
         height: "100",
         Width: "100"
@@ -123,7 +123,7 @@ function (_Component) {
 
       var image4 = _react.default.createElement("img", {
         class: "gridImage",
-        src: "https://static.giantbomb.com/uploads/original/7/74316/2371191-toejam3.jpg",
+        src: "https://static.giantbomb.com/uploads/original/0/1425/445320-tt__23_.jpg",
         alt: "imageForGrid",
         height: "100",
         Width: "100"
@@ -131,7 +131,7 @@ function (_Component) {
 
       var image5 = _react.default.createElement("img", {
         class: "gridImage",
-        src: "https://static.giantbomb.com/uploads/original/0/4231/251443-tjande.jpg",
+        src: "https://static.giantbomb.com/uploads/original/0/1425/445311-tt__17_.jpg",
         alt: "imageForGrid",
         height: "100",
         Width: "100"
@@ -139,7 +139,7 @@ function (_Component) {
 
       var image6 = _react.default.createElement("img", {
         class: "gridImage",
-        src: "https://static.giantbomb.com/uploads/original/1/10283/217802-toejam_and_earl.png",
+        src: "https://static.giantbomb.com/uploads/original/0/1425/445308-tt__14_.jpg",
         alt: "imageForGrid",
         height: "100",
         Width: "100"
@@ -147,7 +147,7 @@ function (_Component) {
 
       var image7 = _react.default.createElement("img", {
         class: "gridImage",
-        src: "https://static.giantbomb.com/uploads/original/0/6036/206701-tje6.gif",
+        src: "https://static.giantbomb.com/uploads/original/0/1425/445287-tt__2_.jpg",
         alt: "imageForGrid",
         height: "100",
         Width: "100"
@@ -155,43 +155,43 @@ function (_Component) {
 
       var modalImage1 = _react.default.createElement("img", {
         class: "modalImage",
-        src: "https://static.giantbomb.com/uploads/original/0/4231/251450-toejam_and_earl.gif",
+        src: "https://static.giantbomb.com/uploads/original/0/1425/445283-tt.jpg",
         alt: "imageForModal"
       });
 
       var modalImage2 = _react.default.createElement("img", {
         class: "modalImage",
-        src: "https://static.giantbomb.com/uploads/original/1/10283/217799-tje7.gif",
+        src: "https://static.giantbomb.com/uploads/original/0/1425/445284-tt__1_.jpg",
         alt: "imageForModal"
       });
 
       var modalImage3 = _react.default.createElement("img", {
         class: "modalImage",
-        src: "https://static.giantbomb.com/uploads/original/0/4231/251453-toejamandearl.jpg",
+        src: "https://static.giantbomb.com/uploads/original/0/1425/445325-tt__27_.jpg",
         alt: "imageForModal"
       });
 
       var modalImage4 = _react.default.createElement("img", {
         class: "modalImage",
-        src: "https://static.giantbomb.com/uploads/original/7/74316/2371191-toejam3.jpg",
+        src: "https://static.giantbomb.com/uploads/original/0/1425/445320-tt__23_.jpg",
         alt: "imageForModal"
       });
 
       var modalImage5 = _react.default.createElement("img", {
         class: "modalImage",
-        src: "https://static.giantbomb.com/uploads/original/0/4231/251443-tjande.jpg",
+        src: "https://static.giantbomb.com/uploads/original/0/1425/445311-tt__17_.jpg",
         alt: "imageForModal"
       });
 
       var modalImage6 = _react.default.createElement("img", {
         class: "modalImage",
-        src: "https://static.giantbomb.com/uploads/original/1/10283/217802-toejam_and_earl.png",
+        src: "https://static.giantbomb.com/uploads/original/0/1425/445308-tt__14_.jpg",
         alt: "imageForModal"
       });
 
       var modalImage7 = _react.default.createElement("img", {
         class: "modalImage",
-        src: "https://static.giantbomb.com/uploads/original/0/6036/206701-tje6.gif",
+        src: "https://static.giantbomb.com/uploads/original/0/1425/445287-tt__2_.jpg",
         alt: "imageForModal"
       });
 
@@ -203,7 +203,7 @@ function (_Component) {
         _this.setState({
           game: {
             gameName: res.data.results.name,
-            gameImage: res.data.results.images[7].super_url,
+            gameImage: res.data.results.images[1].super_url,
             gameStory: gameDescription,
             gameStoryTitle: "Overview",
             //Developer Data
@@ -237,7 +237,7 @@ function (_Component) {
             gameModalImage6: modalImage6,
             gameModalImage7: modalImage7,
             // Link to source material
-            giantBombLink: "https://www.giantbomb.com/toejam-and-earl/" + gameGUID + "/"
+            giantBombLink: "https://www.giantbomb.com/teenage-mutant-ninja-turtles-the-hyperstone-heist/" + gameGUID + "/"
           }
         });
 
@@ -256,38 +256,38 @@ function (_Component) {
     return _this;
   }
 
-  _createClass(toejamNEarlGamePage, [{
+  _createClass(tmntHyperStoneHeistGamePage, [{
     key: "render",
     value: function render() {
       // Styled Components
       var GamePageHeaderFont = _styledComponents.default.h1.withConfig({
-        displayName: "toejamNEarl__GamePageHeaderFont",
-        componentId: "sc-2mnb0p-0"
+        displayName: "tmntHyperStoneHeist__GamePageHeaderFont",
+        componentId: "sc-1veu4o7-0"
       })(["  color:black;-webkit-text-stroke:1px #f25ea4;text-shadow:0 0 4px #f25ea4;font-family:'Roboto-Black';"]);
 
       var OverviewHeaderFont = _styledComponents.default.h3.withConfig({
-        displayName: "toejamNEarl__OverviewHeaderFont",
-        componentId: "sc-2mnb0p-1"
+        displayName: "tmntHyperStoneHeist__OverviewHeaderFont",
+        componentId: "sc-1veu4o7-1"
       })(["  color:#70bac9;font-family:'Roboto-Thin';"]);
 
       var OverviewBodyFont = _styledComponents.default.p.withConfig({
-        displayName: "toejamNEarl__OverviewBodyFont",
-        componentId: "sc-2mnb0p-2"
+        displayName: "tmntHyperStoneHeist__OverviewBodyFont",
+        componentId: "sc-1veu4o7-2"
       })(["  font-family:'Roboto-Thin';"]);
 
       var FooterFont = _styledComponents.default.h6.withConfig({
-        displayName: "toejamNEarl__FooterFont",
-        componentId: "sc-2mnb0p-3"
+        displayName: "tmntHyperStoneHeist__FooterFont",
+        componentId: "sc-1veu4o7-3"
       })(["  font-family:'Roboto-Black';"]);
 
       var RowHeaderFont = _styledComponents.default.strong.withConfig({
-        displayName: "toejamNEarl__RowHeaderFont",
-        componentId: "sc-2mnb0p-4"
+        displayName: "tmntHyperStoneHeist__RowHeaderFont",
+        componentId: "sc-1veu4o7-4"
       })(["font-family:'Roboto-Medium';color:#f25ea4;"]);
 
       var RowContentFont = _styledComponents.default.h6.withConfig({
-        displayName: "toejamNEarl__RowContentFont",
-        componentId: "sc-2mnb0p-5"
+        displayName: "tmntHyperStoneHeist__RowContentFont",
+        componentId: "sc-1veu4o7-5"
       })(["font-family:'Roboto-Medium';"]);
 
       return this.state.isLoading ? _react.default.createElement("div", null, _react.default.createElement("div", {
@@ -763,7 +763,7 @@ function (_Component) {
     }
   }]);
 
-  return toejamNEarlGamePage;
+  return tmntHyperStoneHeistGamePage;
 }(_react.Component);
 
-exports.default = toejamNEarlGamePage;
+exports.default = tmntHyperStoneHeistGamePage;
