@@ -68,55 +68,66 @@ img {
     border: 1.5px solid $oceanGreen;
     position: relative;
 }
+
 .gamePageThumbnail {
     height: 150px;
 }
+
 .esrbRatingIcon {
     height: 22px;
     width: 18px;
 }
+
 .gridImage {
     width: 7em;
 }
 // Game Page Font Sizes
-.fYJwsO { // Game Title
-    font-family: Roboto-Regular;
+//--------------------//
+//Aladdin
+h1 { // Game Title
+    font-family: Roboto-Black;
 }
-.gXGykK { //Strong (or Row Header)
+
+strong { //Strong (or Row Header)
     font-size: 0.6em;
 }
-.dQgOUU { // Row Content
+
+h6 { // Row Content
     font-size: 0.5em;
+    font-family: Roboto-Medium;
 }
-.fYJwsO { // Overview Header
+
+h3 { // Overview Header
     font-family: Roboto-Regular;
 }
 
-.hfLpkq { // Overview Body
+p { // Overview Body
     font-family: Roboto-Thin;
 }
-.hfLpkq::first-letter { // Overview Body
+
+p::first-letter { // Overview Body
     font-size: 150%;
     color: $hotPink;
     text-shadow: 0 0 7px $hotPink;
     font-family: Roboto-Black;
 }
-.kmzQak { // Footer
-    font-family: Roboto-Black;
-}
+//--------------------//
 //Modal Styling
 .modal-header {
     background-color: black;
     color: white;
     border: black;
 }
+
 .close {
     color: $hotPink;
     opacity: 1;
 }
+
 .modal-body {
     background-color: black;
 }
+
 .modal-content  {
     -webkit-border-radius: 0px !important;
     -moz-border-radius: 0px !important;
@@ -129,6 +140,7 @@ img {
 	-webkit-animation: text-focus-in-home 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 	        animation: text-focus-in-home 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
+
 @-webkit-keyframes text-focus-in-home {
     0% {
       -webkit-filter: blur(12px);
@@ -141,6 +153,7 @@ img {
       opacity: 1;
     }
   }
+
   @keyframes text-focus-in-home {
     0% {
       -webkit-filter: blur(12px);
@@ -153,6 +166,7 @@ img {
       opacity: 1;
     }
   }
+
 
 .text-focus-in { // 2000 ms Delay
 	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 2018ms both;
@@ -171,6 +185,7 @@ img {
       opacity: 1;
     }
   }
+
   @keyframes text-focus-in {
     0% {
       -webkit-filter: blur(12px);
@@ -198,12 +213,15 @@ img {
             height: 75px;
             width: 50px;
         }
+
         .logoSmallerScreens {
             width: 16em;
         }
+
         .h1 {
             font-size: 1.5em;
         }
+
         .gridImage {
             width: 5em;
         }
@@ -217,12 +235,15 @@ img {
             height: 75px;
             width: 50px;
         }
+
         .logoSmallerScreens {
             width: 16em;
         }
+
         .h1 {
             font-size: 1.5em;
         }
+
         .gridImage {
             width: 5em;
         }
@@ -237,12 +258,15 @@ img {
             height: 75px;
             width: 50px;
         }
+
         .logoSmallerScreens {
             width: 16em;
         }
+
         .h1 {
             font-size: 1.5em;
         }
+
         .gridImage {
             width: 5em;
         }
@@ -256,12 +280,15 @@ img {
             height: 75px;
             width: 50px;
         }
+
         .logoSmallerScreens {
             width: 16em;
         }
+
         .h1 {
             font-size: 1.5em;
         }
+
         .gridImage {
             width: 5em;
         }
@@ -291,6 +318,7 @@ img {
         .logoSmallerScreens {
             width: 16em;
         }
+
         .gridImage {
             width: 6em;
         }
@@ -303,13 +331,16 @@ img {
         .logoSmallerScreens {
             width: 16em;
         }
+
         .gridImage {
             width: 5.7em;
         }
-        .gXGykK { //Strong (or Row Header)
+
+        strong { //Strong (or Row Header)
             font-size: 0.4em;
         }
-        .hfLpkq { // Overview Body
+
+        p { // Overview Body
             font-size: 0.7em;
         }
 }
@@ -347,6 +378,7 @@ img {
         .logoSmallerScreens {
             width: 16em;
         }
+
         .gridImage {
             width: 6em;
         }
@@ -361,15 +393,18 @@ img {
             height: 100px;
             width: 75px;
         }
+
         .logoSmallerScreens {
             width: 16em;
         }
-        .hfLpkq { // Overview Body
+
+        p { // Overview Body
             font-size: 0.7em;
         }
         .gamePageThumbnail {
             height: 5em;
-        }
+        }  
+
         .gridImage {
             width: 4em;
         }
@@ -397,6 +432,7 @@ img {
         height: 200px;
         width: 150px;
     }
+
     .tableColumn {
         padding-top: 1.7em;
     }
@@ -436,6 +472,7 @@ img {
         height: 300px;
         width: 275px;
     }
+
     .homepageThumbnail {
         height: 125px;
         width: 125px;
@@ -460,38 +497,45 @@ img {
         height: 325px;
         width: 275px;
     }
+
     .logoLargerScreens {
         width: 30em;
     }
-    .jTIvhG { // Game Title
+
+    h1 { // Game Title
         font-size: 7em;
     }
+
     .gamePageThumbnail {
         height: 25em;
     }
-    .gXGykK {
+
+    strong { //Strong (or Row Header)
         font-size: 2em;
     }
-    .dQgOUU {
+
+    h6 { //Row Content
         font-size: 1.5em;
     }
+
     .esrbRatingIcon {
         height: 4em;
         width: 3em;
-    }    
-    .hfLpkq {
+    } 
+
+    p { //Overview Body
         font-size: 1.8em;
     }
+
     .gridImage {
         width: 15em;
     }
+
     .modalImage {
         width: 200em;
     }
-    .kmzQak { //Footer
-        font-size: 2em;
-    }
+    
     .spGBIcon { //Footer Image
-        width: 2em;
+        width: 1.5em;
     }
 }

@@ -471,18 +471,20 @@ function (_Component) {
         target: "_blank"
       }, _react.default.createElement("img", {
         class: "spGBIcon",
-        src: "../src/app/assets/images/SegaParadise2GBLogo.png",
+        src: "../src/app/assets/images/SegaParadise2GBLogo.svg",
         alt: "siteLogoIcon",
         height: "42",
         width: "42"
       })))))))), _react.default.createElement("div", {
         class: "container-fluid d-none d-xl-block"
-      }, " ", _react.default.createElement("img", {
+      }, " ", _react.default.createElement(_reactRouterDom.Link, {
+        to: "/"
+      }, _react.default.createElement("img", {
         class: "logoLargerScreens",
         src: "../src/app/assets/images/SegaParadise2Logo.svg",
         alt: "imageForGrid",
         width: "300"
-      }), _react.default.createElement("div", {
+      })), _react.default.createElement("div", {
         class: "card bg-transparent pt-2"
       }, _react.default.createElement("div", {
         class: "row text-focus-in"
@@ -593,7 +595,7 @@ function (_Component) {
         target: "_blank"
       }, _react.default.createElement("img", {
         class: "spGBIcon",
-        src: "../src/app/assets/images/SegaParadise2GBLogo.png",
+        src: "../src/app/assets/images/SegaParadise2GBLogo.svg",
         alt: "siteLogoIcon",
         height: "42",
         width: "42"

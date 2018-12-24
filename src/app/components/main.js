@@ -27,9 +27,9 @@ export default class MainSource extends Component {
             kidChameleon: {},
             ecco1: {},
             castleMickey: {},
-            streetFighter2: {}, //GUID = 3030-1096
-            tinyToons: {}, //GUID = 3030-9716 KEEP
-            tmntHyperStoneHeist: {}  //GUID = 3030-11404
+            streetFighter2: {},
+            tinyToons: {},
+            tmntHyperStoneHeist: {}
         };
     }
 
@@ -367,39 +367,39 @@ export default class MainSource extends Component {
             </div>:
             <div>
                 <div class="container-fluid d-none d-xl-block"> {/* For larger Sceens */}
-                <Link to="/"><img class="logoLargerScreens" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" width="300" /></Link>
+                    <Link to="/"><img class="logoLargerScreens" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" width="300" /></Link>
                     <div class="row text-focus-in">
                         <div class="mx-auto">
                             <div class="row pt-2 pb-2"> {/* Row 1 */}
                                 <div class="container">
-                                <Link class="homeLink" to="/games/1"><img src={this.state.aladdin.gameImage} class="rounded homepageThumbnail col-3" /></Link>
-                                    <img src={this.state.lionKing.gameImage} class="rounded homepageThumbnail col-3" /> 
-                                    <img src={this.state.sonic1.gameImage} class="rounded homepageThumbnail col-3" />
-                                    <img src={this.state.streetsOfRage2.gameImage} class="rounded homepageThumbnail col-3" />
+                                    <Link class="homeLink" to="/games/1"><img src={this.state.aladdin.gameImage} class="rounded homepageThumbnail col-3" /></Link>
+                                    <Link class="homeLink" to="/games/2"><img src={this.state.lionKing.gameImage} class="rounded homepageThumbnail col-3" /></Link>
+                                    <Link class="homeLink" to="/games/3"><img src={this.state.sonic1.gameImage} class="rounded homepageThumbnail col-3" /></Link>
+                                    <Link class="homeLink" to="/games/4"><img src={this.state.streetsOfRage2.gameImage} class="rounded homepageThumbnail col-3" /></Link>
                                 </div>
                             </div>
                             <div class="row pt-2 pb-2"> {/* Row 2 */}
                                 <div class="container">
-                                    <img src={this.state.sonic2.gameImage} class="homepageThumbnail image-container col-3" />
-                                    <img src={this.state.mortalKombat.gameImage} class="rounded image-container homepageThumbnail col-3" /> 
-                                    <img src={this.state.pocahontas.gameImage} class="rounded homepageThumbnail col-3" />
-                                    <img src={this.state.mjMoonwalker.gameImage} class="rounded homepageThumbnail col-3" />
+                                    <Link class="homeLink" to="/games/5"><img src={this.state.sonic2.gameImage} class="homepageThumbnail image-container col-3" /></Link>
+                                    <Link class="homeLink" to="/games/6"><img src={this.state.mortalKombat.gameImage} class="rounded image-container homepageThumbnail col-3" /></Link> 
+                                    <Link class="homeLink" to="/games/7"><img src={this.state.pocahontas.gameImage} class="rounded homepageThumbnail col-3" /></Link>
+                                    <Link class="homeLink" to="/games/8"><img src={this.state.mjMoonwalker.gameImage} class="rounded homepageThumbnail col-3" /></Link>
                                 </div>
                             </div>
                             <div class="row pt-2 pb-2"> {/* Row 3 */}
                                 <div class="container">
-                                    <img src={this.state.sonicNKnuckles.gameImage} class="rounded homepageThumbnail col-3" />
-                                    <img src={this.state.toejamNEarl.gameImage} class="rounded homepageThumbnail col-3" /> 
-                                    <img src={this.state.kidChameleon.gameImage} class="rounded homepageThumbnail col-3" />
-                                    <img src={this.state.ecco1.gameImage} class="rounded homepageThumbnail col-3" />
+                                    <Link class="homeLink" to="/games/9"><img src={this.state.sonicNKnuckles.gameImage} class="rounded homepageThumbnail col-3" /></Link>
+                                    <Link class="homeLink" to="/games/10"><img src={this.state.toejamNEarl.gameImage} class="rounded homepageThumbnail col-3" /></Link> 
+                                    <Link class="homeLink" to="/games/11"><img src={this.state.kidChameleon.gameImage} class="rounded homepageThumbnail col-3" /></Link>
+                                    <Link class="homeLink" to="/games/12"><img src={this.state.ecco1.gameImage} class="rounded homepageThumbnail col-3" /></Link>
                                 </div>
                             </div>
                             <div class="row pt-2 pb-2"> {/* Row 4 */}
                                 <div class="container">
-                                    <img src={this.state.castleMickey.gameImage} class="rounded homepageThumbnail col-3" />
-                                    <img src={this.state.streetFighter2.gameImage} class="rounded homepageThumbnail col-3" /> 
-                                    <img src={this.state.tinyToons.gameImage} class="rounded homepageThumbnail col-3" />
-                                    <img src={this.state.tmntHyperStoneHeist.gameImage} class="rounded homepageThumbnail col-3" />
+                                    <Link class="homeLink" to="/games/13"><img src={this.state.castleMickey.gameImage} class="rounded homepageThumbnail col-3" /></Link>
+                                    <Link class="homeLink" to="/games/14"><img src={this.state.streetFighter2.gameImage} class="rounded homepageThumbnail col-3" /></Link> 
+                                    <Link class="homeLink" to="/games/15"><img src={this.state.tinyToons.gameImage} class="rounded homepageThumbnail col-3" /></Link>
+                                    <Link class="homeLink" to="/games/16"><img src={this.state.tmntHyperStoneHeist.gameImage} class="rounded homepageThumbnail col-3" /></Link>
                                 </div>
                             </div>
                         </div>
@@ -425,33 +425,33 @@ export default class MainSource extends Component {
                                 <div class="row pt-2 pb-2 mx-auto"> {/* Row 1 */}
                                     <div class="container-fluid">
                                         <Link class="homeLink" to="/games/1"><img src={this.state.aladdin.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                                        <Link class="homeLink pl-2 pr-1" to="/games/1"><img src={this.state.lionKing.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
-                                        <Link class="homeLink pl-1 pr-2" to="/games/1"><img src={this.state.sonic1.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                                        <Link class="homeLink" to="/games/1"><img src={this.state.streetsOfRage2.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                        <Link class="homeLink pl-2 pr-1" to="/games/2"><img src={this.state.lionKing.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
+                                        <Link class="homeLink pl-1 pr-2" to="/games/3"><img src={this.state.sonic1.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                        <Link class="homeLink" to="/games/4"><img src={this.state.streetsOfRage2.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
                                     </div>
                                 </div>
                                 <div class="row pt-2 pb-2 mx-auto"> {/* Row 2 */}
                                     <div class="container-fluid">
-                                        <Link class="homeLink" to="/games/1"><img src={this.state.sonic2.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                                        <Link class="homeLink pl-2 pr-1" to="/games/1"><img src={this.state.mortalKombat.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
-                                        <Link class="homeLink pl-1 pr-2" to="/games/1"><img src={this.state.pocahontas.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                                        <Link class="homeLink" to="/games/1"><img src={this.state.mjMoonwalker.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                        <Link class="homeLink" to="/games/5"><img src={this.state.sonic2.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                        <Link class="homeLink pl-2 pr-1" to="/games/6"><img src={this.state.mortalKombat.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
+                                        <Link class="homeLink pl-1 pr-2" to="/games/7"><img src={this.state.pocahontas.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                        <Link class="homeLink" to="/games/8"><img src={this.state.mjMoonwalker.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
                                     </div>
                                 </div>
                                 <div class="row pt-2 pb-2 mx-auto"> {/* Row 3 */}
                                     <div class="container-fluid">
-                                        <Link class="homeLink" to="/games/1"><img src={this.state.sonicNKnuckles.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                                        <Link class="homeLink pl-2 pr-1" to="/games/1"><img src={this.state.toejamNEarl.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
-                                        <Link class="homeLink pr-2 pl-1" to="/games/1"><img src={this.state.kidChameleon.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                                        <Link class="homeLink" to="/games/1"><img src={this.state.ecco1.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                        <Link class="homeLink" to="/games/9"><img src={this.state.sonicNKnuckles.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                        <Link class="homeLink pl-2 pr-1" to="/games/10"><img src={this.state.toejamNEarl.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
+                                        <Link class="homeLink pr-2 pl-1" to="/games/11"><img src={this.state.kidChameleon.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                        <Link class="homeLink" to="/games/12"><img src={this.state.ecco1.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
                                     </div>
                                 </div>
                                 <div class="row pt-2 pb-2 mx-auto"> {/* Row 4 */}
                                 <div class="container-fluid">
-                                    <Link class="homeLink" to="/games/1"><img src={this.state.castleMickey.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                                    <Link class="homeLink pl-2 pr-1" to="/games/1"><img src={this.state.streetFighter2.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
-                                    <Link class="homeLink pr-2 pl-1" to="/games/1"><img src={this.state.tinyToons.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
-                                    <Link class="homeLink" to="/games/1"><img src={this.state.tmntHyperStoneHeist.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                    <Link class="homeLink" to="/games/13"><img src={this.state.castleMickey.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                    <Link class="homeLink pl-2 pr-1" to="/games/14"><img src={this.state.streetFighter2.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link> 
+                                    <Link class="homeLink pr-2 pl-1" to="/games/15"><img src={this.state.tinyToons.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
+                                    <Link class="homeLink" to="/games/16"><img src={this.state.tmntHyperStoneHeist.gameImage} class="rounded p-0 img-thumbnail homepageThumbnail-mobile col-3" /></Link>
                                 </div>
                             </div>
                         </div>

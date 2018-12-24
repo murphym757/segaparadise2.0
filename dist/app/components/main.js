@@ -386,11 +386,8 @@ function (_Component) {
       ecco1: {},
       castleMickey: {},
       streetFighter2: {},
-      //GUID = 3030-1096
       tinyToons: {},
-      //GUID = 3030-9716 KEEP
-      tmntHyperStoneHeist: {} //GUID = 3030-11404
-
+      tmntHyperStoneHeist: {}
     };
     return _this;
   }
@@ -465,64 +462,109 @@ function (_Component) {
       }, _react.default.createElement("img", {
         src: this.state.aladdin.gameImage,
         class: "rounded homepageThumbnail col-3"
-      })), _react.default.createElement("img", {
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/2"
+      }, _react.default.createElement("img", {
         src: this.state.lionKing.gameImage,
         class: "rounded homepageThumbnail col-3"
-      }), _react.default.createElement("img", {
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/3"
+      }, _react.default.createElement("img", {
         src: this.state.sonic1.gameImage,
         class: "rounded homepageThumbnail col-3"
-      }), _react.default.createElement("img", {
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/4"
+      }, _react.default.createElement("img", {
         src: this.state.streetsOfRage2.gameImage,
         class: "rounded homepageThumbnail col-3"
-      }))), _react.default.createElement("div", {
+      })))), _react.default.createElement("div", {
         class: "row pt-2 pb-2"
       }, " ", _react.default.createElement("div", {
         class: "container"
+      }, _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/5"
       }, _react.default.createElement("img", {
         src: this.state.sonic2.gameImage,
         class: "homepageThumbnail image-container col-3"
-      }), _react.default.createElement("img", {
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/6"
+      }, _react.default.createElement("img", {
         src: this.state.mortalKombat.gameImage,
         class: "rounded image-container homepageThumbnail col-3"
-      }), _react.default.createElement("img", {
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/7"
+      }, _react.default.createElement("img", {
         src: this.state.pocahontas.gameImage,
         class: "rounded homepageThumbnail col-3"
-      }), _react.default.createElement("img", {
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/8"
+      }, _react.default.createElement("img", {
         src: this.state.mjMoonwalker.gameImage,
         class: "rounded homepageThumbnail col-3"
-      }))), _react.default.createElement("div", {
+      })))), _react.default.createElement("div", {
         class: "row pt-2 pb-2"
       }, " ", _react.default.createElement("div", {
         class: "container"
+      }, _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/9"
       }, _react.default.createElement("img", {
         src: this.state.sonicNKnuckles.gameImage,
         class: "rounded homepageThumbnail col-3"
-      }), _react.default.createElement("img", {
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/10"
+      }, _react.default.createElement("img", {
         src: this.state.toejamNEarl.gameImage,
         class: "rounded homepageThumbnail col-3"
-      }), _react.default.createElement("img", {
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/11"
+      }, _react.default.createElement("img", {
         src: this.state.kidChameleon.gameImage,
         class: "rounded homepageThumbnail col-3"
-      }), _react.default.createElement("img", {
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/12"
+      }, _react.default.createElement("img", {
         src: this.state.ecco1.gameImage,
         class: "rounded homepageThumbnail col-3"
-      }))), _react.default.createElement("div", {
+      })))), _react.default.createElement("div", {
         class: "row pt-2 pb-2"
       }, " ", _react.default.createElement("div", {
         class: "container"
+      }, _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/13"
       }, _react.default.createElement("img", {
         src: this.state.castleMickey.gameImage,
         class: "rounded homepageThumbnail col-3"
-      }), _react.default.createElement("img", {
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/14"
+      }, _react.default.createElement("img", {
         src: this.state.streetFighter2.gameImage,
         class: "rounded homepageThumbnail col-3"
-      }), _react.default.createElement("img", {
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/15"
+      }, _react.default.createElement("img", {
         src: this.state.tinyToons.gameImage,
         class: "rounded homepageThumbnail col-3"
-      }), _react.default.createElement("img", {
+      })), _react.default.createElement(_reactRouterDom.Link, {
+        class: "homeLink",
+        to: "/games/16"
+      }, _react.default.createElement("img", {
         src: this.state.tmntHyperStoneHeist.gameImage,
         class: "rounded homepageThumbnail col-3"
-      }))))), _react.default.createElement("div", {
+      })))))), _react.default.createElement("div", {
         class: "row"
       }, _react.default.createElement("div", {
         class: "container-fluid"
@@ -532,7 +574,7 @@ function (_Component) {
         class: "mx-auto text-focus-in"
       }, _react.default.createElement(FooterFont, null, "Data provided courtesy of ", _react.default.createElement("img", {
         class: "spGBIcon",
-        src: "../src/app/assets/images/SegaParadise2GBLogo.png",
+        src: "../src/app/assets/images/SegaParadise2GBLogo.svg",
         alt: "siteLogoIcon",
         height: "42",
         width: "42"
@@ -564,19 +606,19 @@ function (_Component) {
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
       })), _react.default.createElement(_reactRouterDom.Link, {
         class: "homeLink pl-2 pr-1",
-        to: "/games/1"
+        to: "/games/2"
       }, _react.default.createElement("img", {
         src: this.state.lionKing.gameImage,
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
       })), _react.default.createElement(_reactRouterDom.Link, {
         class: "homeLink pl-1 pr-2",
-        to: "/games/1"
+        to: "/games/3"
       }, _react.default.createElement("img", {
         src: this.state.sonic1.gameImage,
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
       })), _react.default.createElement(_reactRouterDom.Link, {
         class: "homeLink",
-        to: "/games/1"
+        to: "/games/4"
       }, _react.default.createElement("img", {
         src: this.state.streetsOfRage2.gameImage,
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
@@ -586,25 +628,25 @@ function (_Component) {
         class: "container-fluid"
       }, _react.default.createElement(_reactRouterDom.Link, {
         class: "homeLink",
-        to: "/games/1"
+        to: "/games/5"
       }, _react.default.createElement("img", {
         src: this.state.sonic2.gameImage,
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
       })), _react.default.createElement(_reactRouterDom.Link, {
         class: "homeLink pl-2 pr-1",
-        to: "/games/1"
+        to: "/games/6"
       }, _react.default.createElement("img", {
         src: this.state.mortalKombat.gameImage,
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
       })), _react.default.createElement(_reactRouterDom.Link, {
         class: "homeLink pl-1 pr-2",
-        to: "/games/1"
+        to: "/games/7"
       }, _react.default.createElement("img", {
         src: this.state.pocahontas.gameImage,
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
       })), _react.default.createElement(_reactRouterDom.Link, {
         class: "homeLink",
-        to: "/games/1"
+        to: "/games/8"
       }, _react.default.createElement("img", {
         src: this.state.mjMoonwalker.gameImage,
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
@@ -614,25 +656,25 @@ function (_Component) {
         class: "container-fluid"
       }, _react.default.createElement(_reactRouterDom.Link, {
         class: "homeLink",
-        to: "/games/1"
+        to: "/games/9"
       }, _react.default.createElement("img", {
         src: this.state.sonicNKnuckles.gameImage,
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
       })), _react.default.createElement(_reactRouterDom.Link, {
         class: "homeLink pl-2 pr-1",
-        to: "/games/1"
+        to: "/games/10"
       }, _react.default.createElement("img", {
         src: this.state.toejamNEarl.gameImage,
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
       })), _react.default.createElement(_reactRouterDom.Link, {
         class: "homeLink pr-2 pl-1",
-        to: "/games/1"
+        to: "/games/11"
       }, _react.default.createElement("img", {
         src: this.state.kidChameleon.gameImage,
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
       })), _react.default.createElement(_reactRouterDom.Link, {
         class: "homeLink",
-        to: "/games/1"
+        to: "/games/12"
       }, _react.default.createElement("img", {
         src: this.state.ecco1.gameImage,
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
@@ -642,25 +684,25 @@ function (_Component) {
         class: "container-fluid"
       }, _react.default.createElement(_reactRouterDom.Link, {
         class: "homeLink",
-        to: "/games/1"
+        to: "/games/13"
       }, _react.default.createElement("img", {
         src: this.state.castleMickey.gameImage,
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
       })), _react.default.createElement(_reactRouterDom.Link, {
         class: "homeLink pl-2 pr-1",
-        to: "/games/1"
+        to: "/games/14"
       }, _react.default.createElement("img", {
         src: this.state.streetFighter2.gameImage,
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
       })), _react.default.createElement(_reactRouterDom.Link, {
         class: "homeLink pr-2 pl-1",
-        to: "/games/1"
+        to: "/games/15"
       }, _react.default.createElement("img", {
         src: this.state.tinyToons.gameImage,
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
       })), _react.default.createElement(_reactRouterDom.Link, {
         class: "homeLink",
-        to: "/games/1"
+        to: "/games/16"
       }, _react.default.createElement("img", {
         src: this.state.tmntHyperStoneHeist.gameImage,
         class: "rounded p-0 img-thumbnail homepageThumbnail-mobile col-3"
@@ -670,7 +712,7 @@ function (_Component) {
         class: "mx-auto text-focus-in"
       }, _react.default.createElement(FooterFont, null, "Data provided courtesy of ", _react.default.createElement("img", {
         class: "spGBIcon",
-        src: "../src/app/assets/images/SegaParadise2GBLogo.png",
+        src: "../src/app/assets/images/SegaParadise2GBLogo.svg",
         alt: "siteLogoIcon",
         height: "42",
         width: "42"

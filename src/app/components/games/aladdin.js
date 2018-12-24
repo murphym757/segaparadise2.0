@@ -284,7 +284,7 @@ export default class aladdinGameLink extends Component {
                     </div>
                 </div>
                 <div class="container-fluid d-none d-xl-block"> {/* For larger Sceens */}
-                    <img class="logoLargerScreens" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" width="300" />
+                    <Link to="/"><img class="logoLargerScreens" src="../src/app/assets/images/SegaParadise2Logo.svg" alt="imageForGrid" width="300" /></Link>
                     <div class="card bg-transparent pt-2">
                         <div class="row text-focus-in">
                             <div class="container">
