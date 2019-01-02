@@ -1,82 +1,9 @@
-# react-template
+# Sega Paradise 2
 
-This project is meant to serve as a ready-to-go React app. With the purpose of reducing the stress setup process.
+This project is a react app that a reimagining of the original [Sega Paradise](https://segaparadise.herokuapp.com/) web app.
 
-
-### Prerequisites
-
-Clone the repository:
-
-```
-git clone https://github.com/murphym757/react-template
-```
-### (Important) Rename the react-template folder to whatever you'd like. 
-
-Using a terminal, navigate to the that folder and run this code to remove the current repository:
-
-```
-rm -rf .git
-```
-
-Then create your own repository via the git-cli:
-
-```
-git init
-```
-
-### Installing
-
-Install all of the project's node modules via:
-
-```
-npm install
-```
-compile the component source files
-
-```
-npm run build
-```
-
-Transpile the component source files
-
-```
-npm run transpile
-```
-
-## Testing the code
-
-```
-npm start
-```
-The server is set to 3000, so navigate in your web browser to,http://localhost:3000/. Don't forget to press ctrl+c to close. From there, you can make whatever changes you'd like. Howeever, you must repeat the transpile and build stages again.
-
-
-### Styling
-
-Everything in the assets folder can be changed to your liking.
-
-### Deployment
-
-Publish your newly created repository to GitHub. 
-
-This project was created with deploying to Heroku in mind.
-
-* Simply create a Heroku account.
-* On Heroku, create a new app and add GitHub as a deployment method. Enable automatic deploys on that pipeline.
-
-Install the [Heroku-Cli](https://devcenter.heroku.com/articles/heroku-cli).
-
-```
-npm install -g heroku
-```
-
-Please place this line of code in the heroku-cli to ensure that the devDependencies are installed properly:
-
-```
-heroku config:set NPM_CONFIG_PRODUCTION=false --app yourappname
-```
-
-On your app's Heroku deploy page, manually deploy the branch. From there, the app should be fully functional now.
+## What is it and How Does it Work
+Similar to the previous project, it is site dedicated to my love of the Sega Genesis console. The user is still provided 16 games, but the user does not have CRUD capabilities. That is replaced via the use of the Giant Bomb API. Each game still has a page dedicated to providing the user with data about the game. This time around, the focus was on overall design. The app is broken up into two sections: mobile and laptop/hd/4K. The design (similar to the previous one) is influenced by the outrun aesthetic. Outrun pulls its style and namesake from the 1986 Sega arcade game. My intent was to convey that style via SASS and I believe I accomplished that. Please feel free to see for yourself by click the link at the top of this page. Thanks
 
 ## Built With
 
@@ -86,6 +13,8 @@ On your app's Heroku deploy page, manually deploy the branch. From there, the ap
 * [Node.js](https://nodejs.org/en/) - Backend framework
 * [Bootstrap](https://getbootstrap.com/) - Front-end component library
 * [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) - PaaP host
+* [Giantbomb API](https://www.giantbomb.com/) - Videogame API
+* [Axios](https://github.com/axios/axios) - Fetches data from APIs
 
 ## Authors
 
